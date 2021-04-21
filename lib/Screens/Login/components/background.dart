@@ -1,3 +1,4 @@
+import 'package:bits/constants.dart';
 import 'package:flutter/material.dart';
 
 class Background extends StatelessWidget {
@@ -14,15 +15,15 @@ class Background extends StatelessWidget {
       height: size.height,
       width: double.infinity,
       child: Stack(
-        alignment: Alignment.center,
+        alignment: Alignment.topCenter,
         children: <Widget>[
-          Positioned(
-            top: 0,
-            left: 0,
-            child: Image.asset(
-              "assets/images/main_top.png",
-              width: size.width * 0.3,
-            ),
+          Container(
+            decoration: BoxDecoration(
+                color: kPrimaryColor,
+                borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(25),
+                    bottomRight: Radius.circular(25))),
+            height: size.height * 0.3,
           ),
           Positioned(
             bottom: 0,

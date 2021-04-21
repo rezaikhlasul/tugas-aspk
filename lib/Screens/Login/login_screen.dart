@@ -1,7 +1,7 @@
-import 'package:bits/Screens/Welcome/components/body.dart';
+import 'package:bits/Screens/Login/components/body.dart';
 import 'package:flutter/material.dart';
 
-class WelcomeScreen extends StatelessWidget {
+class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
