@@ -11,7 +11,7 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size; // provides total size of screen
 
-    return Background(
+    return BackgroundLogin(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[

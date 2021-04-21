@@ -1,9 +1,9 @@
 import 'package:bits/constants.dart';
 import 'package:flutter/material.dart';
 
-class Background extends StatelessWidget {
+class BackgroundLogin extends StatelessWidget {
   final Widget child;
-  const Background({
+  const BackgroundLogin({
     Key key,
     @required this.child,
   }) : super(key: key);
