@@ -2,8 +2,10 @@ import 'package:bits/constants.dart';
 import 'package:flutter/material.dart';
 
 class BackgroundSignUp extends StatelessWidget {
+  final Widget child;
   const BackgroundSignUp({
     Key key,
+    this.child,
   }) : super(key: key);
 
   @override
@@ -24,16 +26,17 @@ class BackgroundSignUp extends StatelessWidget {
                     bottomRight: Radius.circular(25),
                     bottomLeft: Radius.circular(25))),
             child: Container(
-              margin: EdgeInsets.only(
-                  top: size.height * 0.075, left: size.width * 0.1),
-              child: Text(
-                "Selamat Datang",
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    fontStyle: FontStyle.italic),
+              margin: EdgeInsets.only(left: size.width * 0.07),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "Buat Akun Baru",
+                  style: TextStyle(
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      fontStyle: FontStyle.italic),
+                ),
               ),
             ),
           ),
@@ -44,6 +47,7 @@ class BackgroundSignUp extends StatelessWidget {
                 "assets/images/login_bottom.png",
                 width: size.width * 0.5,
               )),
+          child,
         ],
       ),
     );
