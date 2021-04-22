@@ -2,6 +2,7 @@ import 'package:bits/Screens/Login/components/background.dart';
 import 'package:bits/Screens/SignUp/signup_screen.dart';
 import 'package:bits/components/buttons/auth/button_auth.dart';
 import 'package:bits/components/buttons/auth/text_field_container_auth.dart';
+import 'package:bits/components/or_divider/or_divider.dart';
 import 'package:bits/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -87,6 +88,27 @@ class Body extends StatelessWidget {
                               );
                             },
                           ),
+                          OrDivider(),
+                          Container(
+                            margin: EdgeInsets.only(top: 5),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                FirebaseAuth(
+                                  iconSrc: "assets/icons/google-plus.svg",
+                                  press: () {},
+                                ),
+                                FirebaseAuth(
+                                  iconSrc: "assets/icons/facebook.svg",
+                                  press: () {},
+                                ),
+                                FirebaseAuth(
+                                  iconSrc: "assets/icons/twitter.svg",
+                                  press: () {},
+                                )
+                              ],
+                            ),
+                          )
                         ],
                       ),
                     ),
@@ -95,6 +117,36 @@ class Body extends StatelessWidget {
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class FirebaseAuth extends StatelessWidget {
+  final String iconSrc;
+  final Function press;
+  const FirebaseAuth({
+    Key key,
+    this.iconSrc,
+    this.press,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: press,
+      child: Container(
+        margin: EdgeInsets.symmetric(horizontal: 4),
+        padding: EdgeInsets.all(15),
+        decoration: BoxDecoration(
+          border: Border.all(width: 2, color: kPrimaryColor),
+          shape: BoxShape.circle,
+        ),
+        child: SvgPicture.asset(
+          iconSrc,
+          height: 15,
+          width: 15,
         ),
       ),
     );
