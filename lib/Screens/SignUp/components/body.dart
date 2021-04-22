@@ -1,5 +1,8 @@
 import 'package:bits/Screens/SignUp/components/background.dart';
+import 'package:bits/Screens/SignUp/components/dropdown_role.dart';
+import 'package:bits/components/buttons/auth/button_auth.dart';
 import 'package:bits/components/buttons/auth/text_field_container_auth.dart';
+import 'package:bits/constants.dart';
 import 'package:flutter/material.dart';
 
 class Body extends StatelessWidget {
@@ -21,10 +24,13 @@ class Body extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Flexible(
-                  flex: 4,
+                  flex: 3,
                   child: Container(
                     child: Column(
                       children: <Widget>[
+                        SizedBox(
+                          height: size.height * 0.03,
+                        ),
                         TextFieldContainerAuth(
                           child: TextField(
                             decoration:
@@ -54,13 +60,25 @@ class Body extends StatelessWidget {
                                 InputDecoration(hintText: "Ulangi Kata Sandi"),
                           ),
                         ),
+                        Container(
+                          child: DropdownRole(), //pilihan role
+                        )
                       ],
                     ),
                   )),
               Flexible(
                   flex: 1,
                   child: Container(
-                    color: Colors.blue,
+                    child: Column(
+                      children: <Widget>[
+                        RoundedAuthButton(
+                          text: "Daftar",
+                          press: () {},
+                          color: kPrimaryColor,
+                          textColor: Colors.white,
+                        )
+                      ],
+                    ),
                   )),
             ],
           ),

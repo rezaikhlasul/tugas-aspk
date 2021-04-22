@@ -1,5 +1,6 @@
 import 'package:bits/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class BackgroundSignUp extends StatelessWidget {
   final Widget child;
@@ -25,20 +26,11 @@ class BackgroundSignUp extends StatelessWidget {
                 borderRadius: BorderRadius.only(
                     bottomRight: Radius.circular(25),
                     bottomLeft: Radius.circular(25))),
-            child: Container(
-              margin: EdgeInsets.only(left: size.width * 0.07),
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  "Buat Akun Baru",
-                  style: TextStyle(
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                      fontStyle: FontStyle.italic),
-                ),
-              ),
-            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(top: size.height * 0.03),
+            height: size.height * 0.3,
+            child: SvgPicture.asset("assets/icons/signup.svg"),
           ),
           Positioned(
               bottom: 0,
