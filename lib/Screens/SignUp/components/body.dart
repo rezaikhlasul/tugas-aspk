@@ -1,3 +1,4 @@
+import 'package:bits/Screens/Login/login_screen.dart';
 import 'package:bits/Screens/SignUp/components/background.dart';
 import 'package:bits/Screens/SignUp/components/dropdown_role.dart';
 import 'package:bits/components/buttons/auth/button_auth.dart';
@@ -60,8 +61,13 @@ class Body extends StatelessWidget {
                                 InputDecoration(hintText: "Ulangi Kata Sandi"),
                           ),
                         ),
-                        Container(
-                          child: DropdownRole(), //pilihan role
+                        Column(
+                          children: <Widget>[
+                            Text("Daftar Sebagai"),
+                            Container(
+                              child: DropdownRole(), //pilihan role
+                            ),
+                          ],
                         )
                       ],
                     ),
@@ -76,6 +82,39 @@ class Body extends StatelessWidget {
                           press: () {},
                           color: kPrimaryColor,
                           textColor: Colors.white,
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(top: 5),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Text(
+                                "Sudah memiliki akun ?",
+                                style: TextStyle(color: Colors.black87),
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) {
+                                        return LoginScreen();
+                                      },
+                                    ),
+                                  );
+                                },
+                                child: Text(
+                                  "Masuk",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: kPrimaryColor),
+                                ),
+                              ),
+                            ],
+                          ),
                         )
                       ],
                     ),
