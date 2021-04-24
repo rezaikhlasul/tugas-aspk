@@ -1,4 +1,3 @@
-import 'package:bits/constants.dart';
 import 'package:flutter/material.dart';
 
 class BackgroundOnboarding extends StatelessWidget {
@@ -12,11 +11,12 @@ class BackgroundOnboarding extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: child,
-      decoration: BoxDecoration(
-          gradient: LinearGradient(
-              colors: ([kPrimaryLightColor, kPrimaryColor]),
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight)),
+      color: Colors.white,
+      // decoration: BoxDecoration(
+      //     gradient: LinearGradient(
+      //         colors: ([kPrimaryLightColor, kPrimaryColor]),
+      //         begin: Alignment.topLeft,
+      //         end: Alignment.bottomRight)),
     );
   }
 }
