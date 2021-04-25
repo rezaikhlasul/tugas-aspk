@@ -2,22 +2,9 @@ import 'package:flutter/material.dart';
 
 //Green Nature More Light
 //
-const kPrimaryColor = Color(0xFF7ABA9D);
-const kPrimaryLightColor = Color(0xFFF0FDF6);
-const kPrimaryHardColor = Color(0xFF2C805A);
-
-const kAccentColor = Color(0xFF1b512d);
-
-const gradientPrimary = LinearGradient(
-    colors: ([kPrimaryColor, kPrimaryHardColor]),
-    begin: Alignment.bottomLeft,
-    end: Alignment.topRight);
-
-// GreenNature
-//
-// const kPrimaryColor = Color(0xFF3C8363);
+// const kPrimaryColor = Color(0xFF7ABA9D);
 // const kPrimaryLightColor = Color(0xFFF0FDF6);
-// const kPrimaryHardColor = Color(0xFF0C4E30);
+// const kPrimaryHardColor = Color(0xFF2C805A);
 
 // const kAccentColor = Color(0xFF1b512d);
 
@@ -25,6 +12,19 @@ const gradientPrimary = LinearGradient(
 //     colors: ([kPrimaryColor, kPrimaryHardColor]),
 //     begin: Alignment.bottomLeft,
 //     end: Alignment.topRight);
+
+// GreenNature
+//
+const kPrimaryColor = Color(0xFF3C8363);
+const kPrimaryLightColor = Color(0xFFF0FDF6);
+const kPrimaryHardColor = Color(0xFF0C4E30);
+
+const kAccentColor = Color(0xFF1b512d);
+
+const gradientPrimary = LinearGradient(
+    colors: ([kPrimaryColor, kPrimaryHardColor]),
+    begin: Alignment.bottomLeft,
+    end: Alignment.topRight);
 
 // SoftBlue
 //

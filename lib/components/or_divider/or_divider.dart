@@ -13,7 +13,7 @@ class OrDivider extends StatelessWidget {
           Container(
             padding: EdgeInsets.symmetric(horizontal: 10),
             child: Text(
-              "OR",
+              "Atau",
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: kPrimaryColor,
