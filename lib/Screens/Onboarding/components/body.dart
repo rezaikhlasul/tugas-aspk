@@ -1,5 +1,6 @@
 import 'package:bits/Screens/Login/login_screen.dart';
 import 'package:bits/Screens/Onboarding/components/background.dart';
+import 'package:bits/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:introduction_screen/introduction_screen.dart';
@@ -16,7 +17,7 @@ class Body extends StatelessWidget {
         ),
         decoration: const PageDecoration(
             titleTextStyle: TextStyle(
-              color: Colors.black87,
+              color: kPrimaryHardColor,
               fontSize: 18,
               fontWeight: FontWeight.w700,
             ),
@@ -32,7 +33,7 @@ class Body extends StatelessWidget {
         ),
         decoration: const PageDecoration(
             titleTextStyle: TextStyle(
-              color: Colors.black87,
+              color: kPrimaryHardColor,
               fontFamily: 'Poppins',
               fontSize: 18,
               fontWeight: FontWeight.w700,
@@ -49,7 +50,7 @@ class Body extends StatelessWidget {
         ),
         decoration: const PageDecoration(
             titleTextStyle: TextStyle(
-              color: Colors.black87,
+              color: kPrimaryHardColor,
               fontSize: 18,
               fontWeight: FontWeight.w700,
             ),
