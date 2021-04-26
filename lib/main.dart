@@ -1,4 +1,4 @@
-import 'package:bits/Screens/Onboarding/onboarding_screen.dart';
+import 'package:bits/Screens/SplashScreen/splash_screen.dart';
 import 'package:bits/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         primaryColor: kPrimaryColor,
         scaffoldBackgroundColor: Colors.white,
       ),
-      home: OnboardingScreen(),
+      home: SplashScreen(),
     );
   }
 }
