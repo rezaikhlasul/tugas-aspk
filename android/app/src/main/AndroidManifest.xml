@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.bits">
+    package="com.creative.bits">
    <application
         android:label="bits"
         android:icon="@mipmap/ic_launcher">
