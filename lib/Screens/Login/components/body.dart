@@ -4,8 +4,10 @@ import 'package:bits/components/buttons/auth/button_auth.dart';
 import 'package:bits/components/buttons/auth/text_field_container_auth.dart';
 import 'package:bits/components/or_divider/or_divider.dart';
 import 'package:bits/constants.dart';
+import 'package:bits/provider/google_sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -114,7 +116,13 @@ class Body extends StatelessWidget {
                               children: <Widget>[
                                 FirebaseAuth(
                                   iconSrc: "assets/icons/google-plus.svg",
-                                  press: () {},
+                                  press: () {
+                                    final provider =
+                                        Provider.of<GoogleSignInProvider>(
+                                            context,
+                                            listen: false);
+                                    provider.login();
+                                  },
                                 ),
                                 FirebaseAuth(
                                   iconSrc: "assets/icons/facebook.svg",

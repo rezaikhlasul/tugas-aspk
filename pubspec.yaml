@@ -23,11 +23,16 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  animated_splash_screen: ^1.1.0
+  cloud_firestore: ^1.0.7
   cupertino_icons: ^1.0.2
+  firebase_auth: ^1.1.2
+  firebase_core: ^1.1.0
   flutter_svg: ^0.21.0+1
+  google_sign_in: ^5.0.2
   introduction_screen: ^2.1.0
   lottie: ^1.0.1
-  animated_splash_screen: ^1.1.0
+  provider: ^5.0.0
 
 dev_dependencies:
   flutter_test:
