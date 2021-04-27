@@ -114,7 +114,7 @@ class Body extends StatelessWidget {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
-                                FirebaseAuth(
+                                SocialAuth(
                                   iconSrc: "assets/icons/google-plus.svg",
                                   press: () {
                                     final provider =
@@ -124,11 +124,11 @@ class Body extends StatelessWidget {
                                     provider.login();
                                   },
                                 ),
-                                FirebaseAuth(
+                                SocialAuth(
                                   iconSrc: "assets/icons/facebook.svg",
                                   press: () {},
                                 ),
-                                FirebaseAuth(
+                                SocialAuth(
                                   iconSrc: "assets/icons/twitter.svg",
                                   press: () {},
                                 )
@@ -149,10 +149,10 @@ class Body extends StatelessWidget {
   }
 }
 
-class FirebaseAuth extends StatelessWidget {
+class SocialAuth extends StatelessWidget {
   final String iconSrc;
   final Function press;
-  const FirebaseAuth({
+  const SocialAuth({
     Key key,
     this.iconSrc,
     this.press,
