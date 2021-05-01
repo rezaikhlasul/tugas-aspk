@@ -1,14 +1,19 @@
+import 'package:bits/constants.dart';
 import 'package:flutter/material.dart';
 
 class BackgroundHomeKonsumen extends StatelessWidget {
+  final Widget child;
   const BackgroundHomeKonsumen({
     Key key,
+    this.child,
   }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.cyan,
+      child: child,
+      decoration: BoxDecoration(
+        color: Colors.white,
+      ),
     );
   }
 }
