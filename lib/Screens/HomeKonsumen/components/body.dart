@@ -1,4 +1,5 @@
 import 'package:bits/Screens/HomeKonsumen/components/listview.dart';
+import 'package:bits/Screens/HomeKonsumen/components/searchbar.dart';
 import 'package:flutter/material.dart';
 import 'package:bits/Screens/HomeKonsumen/components/background.dart';
 import 'package:introduction_screen/introduction_screen.dart';
@@ -24,20 +25,23 @@ class BodyHomeKonsumen extends StatelessWidget {
               child: Container(
             margin: EdgeInsets.only(left: 10),
             color: Colors.white,
-            width: 175,
+            width: 200,
             height: 50,
             alignment: Alignment.centerLeft,
             child: Text(
               "Temukan Produk UMKM Yang Kamu Butuhkan !",
               textAlign: TextAlign.justify,
               maxLines: 2,
-              style:
-                  TextStyle(color: Colors.green, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                  color: Colors.green,
+                  fontWeight: FontWeight.w300,
+                  fontSize: 17),
             ),
           )),
           Flexible(
               child: Container(
-            color: Colors.yellow,
+            color: Colors.white,
+            child: SBHomeKonsumen(),
           )),
           Flexible(
               flex: 2,

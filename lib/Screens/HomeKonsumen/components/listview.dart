@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class ListViewHomeKonsumen1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Stack(
+    return Column(
       children: <Widget>[
         Text(
           "Kategori",
@@ -28,50 +28,14 @@ class ListViewHomeKonsumen2 extends StatelessWidget {
             child: Card(
               child: Wrap(
                 children: <Widget>[
-                  Image.network(null, fit: BoxFit.fill),
+                  Image.network(""),
                   ListTile(
-                    title: Text("KeripikPisang"),
+                    title: Text("heading"),
                   )
                 ],
               ),
             ),
           ),
-          Container(
-            child: Card(
-              child: Wrap(
-                children: <Widget>[
-                  Image.network(null, fit: BoxFit.fill),
-                  ListTile(
-                    title: Text("ipikPis"),
-                  )
-                ],
-              ),
-            ),
-          ),
-          Container(
-            child: Card(
-              child: Wrap(
-                children: <Widget>[
-                  Image.network(null, fit: BoxFit.fill),
-                  ListTile(
-                    title: Text("Keripik"),
-                  )
-                ],
-              ),
-            ),
-          ),
-          Container(
-            child: Card(
-              child: Wrap(
-                children: <Widget>[
-                  Image.network(null, fit: BoxFit.fill),
-                  ListTile(
-                    title: Text("Pisang"),
-                  )
-                ],
-              ),
-            ),
-          )
         ],
       ),
     );

@@ -6,7 +6,14 @@ import 'package:bits/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/material/bottom_navigation_bar_theme.dart';
 
-class HomeKonsumen extends StatelessWidget {
+class HomeKonsumen extends StatefulWidget {
+  @override
+  _HomeKonsumenState createState() => _HomeKonsumenState();
+}
+
+int _currentIndex = 0;
+
+class _HomeKonsumenState extends State<HomeKonsumen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +26,11 @@ class HomeKonsumen extends StatelessWidget {
           selectedFontSize: 14,
           unselectedFontSize: 14,
           iconSize: 40,
-          onTap: (value) {
+          currentIndex: _currentIndex,
+          onTap: (index) {
+            setState(() {
+              _currentIndex = index;
+            });
             // Respond to item press.
           },
           items: [

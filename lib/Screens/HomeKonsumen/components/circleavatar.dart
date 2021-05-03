@@ -10,7 +10,9 @@ class CAHomeKonsumen extends StatelessWidget {
           padding: EdgeInsets.all(5),
           color: Colors.white,
           child: CircleAvatar(
-            backgroundImage: null,
+            backgroundImage: NetworkImage(
+              "",
+            ),
             radius: 100,
           ),
         ),
@@ -18,7 +20,7 @@ class CAHomeKonsumen extends StatelessWidget {
           Text(
             "Halo ASPK",
             style: TextStyle(
-                color: Colors.black, fontWeight: FontWeight.bold, fontSize: 20),
+                color: Colors.black, fontWeight: FontWeight.bold, fontSize: 17),
           ),
         ]),
       ],
