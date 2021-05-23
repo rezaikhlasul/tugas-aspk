@@ -24,18 +24,13 @@ class ListViewHomeKonsumen2 extends StatelessWidget {
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: <Widget>[
-          Container(
-            child: Card(
-              child: Wrap(
-                children: <Widget>[
-                  Image.network(""),
-                  ListTile(
-                    title: Text("heading"),
-                  )
-                ],
-              ),
-            ),
+          Image(
+            image: AssetImage("assets/images/Manisan.png"),
+            width: 100,
           ),
+          ListTile(
+            title: Text("Manisan"),
+          )
         ],
       ),
     );
