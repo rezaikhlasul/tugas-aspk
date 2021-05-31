@@ -1,4 +1,6 @@
+import 'package:bits/Screens/Login/login_screen.dart';
 import 'package:bits/Screens/Onboarding/components/background.dart';
+import 'package:bits/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:introduction_screen/introduction_screen.dart';
@@ -15,10 +17,10 @@ class Body extends StatelessWidget {
         ),
         decoration: const PageDecoration(
             titleTextStyle: TextStyle(
-                color: Colors.white,
-                fontSize: 28,
-                fontWeight: FontWeight.bold,
-                fontStyle: FontStyle.italic),
+              color: kPrimaryHardColor,
+              fontSize: 18,
+              fontWeight: FontWeight.w700,
+            ),
             imageFlex: 3,
             bodyFlex: 1),
       ),
@@ -31,10 +33,27 @@ class Body extends StatelessWidget {
         ),
         decoration: const PageDecoration(
             titleTextStyle: TextStyle(
-                color: Colors.white,
-                fontSize: 28,
-                fontWeight: FontWeight.bold,
-                fontStyle: FontStyle.italic),
+              color: kPrimaryHardColor,
+              fontFamily: 'Poppins',
+              fontSize: 18,
+              fontWeight: FontWeight.w700,
+            ),
+            imageFlex: 3,
+            bodyFlex: 1),
+      ),
+      PageViewModel(
+        title: "Membantu UMKM meningkatkan kualitasnya",
+        body: "ini adalah body 1",
+        image: SvgPicture.asset(
+          "assets/ilustrasi/marketup.svg",
+          alignment: Alignment.center,
+        ),
+        decoration: const PageDecoration(
+            titleTextStyle: TextStyle(
+              color: kPrimaryHardColor,
+              fontSize: 18,
+              fontWeight: FontWeight.w700,
+            ),
             imageFlex: 3,
             bodyFlex: 1),
       ),
@@ -48,9 +67,18 @@ class Body extends StatelessWidget {
         globalBackgroundColor: Colors.transparent,
         done: const Text(
           "Done",
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.black54),
         ),
-        onDone: () {},
+        onDone: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) {
+                return LoginScreen();
+              },
+            ),
+          );
+        },
         pages: getPages(),
         showNextButton: false,
       ),

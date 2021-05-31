@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "70456995634",
+    "project_id": "bits-aspk",
+    "storage_bucket": "bits-aspk.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:70456995634:android:3094545f81c55778e0b12b",
+        "android_client_info": {
+          "package_name": "com.creative.bits"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "70456995634-q781antgq2ahalqb8vbkpbsosr8eve09.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.creative.bits",
+            "certificate_hash": "e6405381859423bc4d06c7d8d2179c8a697325f6"
+          }
+        },
+        {
+          "client_id": "70456995634-pkup7cffppfdvgs80nj080eeogr25bkc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANNJAbfvQ-_QkmJYqScuQinv7jevya7kI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "70456995634-pkup7cffppfdvgs80nj080eeogr25bkc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -10,13 +10,28 @@ class BackgroundOnboarding extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: child,
-      decoration: BoxDecoration(
-          gradient: LinearGradient(
-              colors: ([kPrimaryLightColor, kPrimaryColor]),
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight)),
+    Size size = MediaQuery.of(context).size;
+    return SingleChildScrollView(
+      child: Container(
+        width: double.infinity,
+        height: size.height,
+        child: Stack(
+          alignment: Alignment.topCenter,
+          children: <Widget>[
+            Container(
+              height: size.height * 0.7,
+              width: size.width,
+              decoration: BoxDecoration(
+                gradient: gradientPrimary,
+                borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(25),
+                    bottomRight: Radius.circular(25)),
+              ),
+            ),
+            child,
+          ],
+        ),
+      ),
     );
   }
 }
