@@ -18,7 +18,6 @@ class _HomeUMKMState extends State<HomeUMKM> {
             children: <Widget>[
               CAUMKM(),
               TXU(),
-              Expanded(child: ListProdukUMKM()),
             ],
           ),
         ),

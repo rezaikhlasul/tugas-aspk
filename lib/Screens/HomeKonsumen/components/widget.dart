@@ -17,7 +17,12 @@ class _SBrekomendasiState extends State<SBrekomendasi> {
       ),
       body: Container(
         height: double.infinity,
-        child: ListProdukRekomendasi(),
+        child: Column(
+          children: <Widget>[
+            SBHomeKonsumen(),
+            Expanded(child: ListProdukRekomendasi())
+          ],
+        ),
       ),
     );
   }
