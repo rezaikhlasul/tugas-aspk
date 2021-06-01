@@ -1,4 +1,3 @@
-import 'package:bits/constants.dart';
 import 'package:flutter/material.dart';
 
 class BackgroundHomeKonsumen extends StatelessWidget {

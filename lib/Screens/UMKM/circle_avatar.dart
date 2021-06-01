@@ -1,13 +1,7 @@
 import 'package:flutter/material.dart';
-// ignore: implementation_imports
-import 'package:flutter/src/material/icons.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
-class CAHomeKonsumen extends StatefulWidget {
-  @override
-  _CAHomeKonsumenState createState() => _CAHomeKonsumenState();
-}
-
-class _CAHomeKonsumenState extends State<CAHomeKonsumen> {
+class CAUMKM extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -37,8 +31,8 @@ class _CAHomeKonsumenState extends State<CAHomeKonsumen> {
                   ),
                   Row(
                     children: <Widget>[
-                      Icon(Icons.monetization_on),
-                      Text("koin"),
+                      SvgPicture.asset("assets/icons/UMKM/produk.svg"),
+                      Text("produk"),
                     ],
                   ),
                 ]),

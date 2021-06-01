@@ -21,27 +21,20 @@ class HomeKonsumen extends StatefulWidget {
 class _HomeKonsumenState extends State<HomeKonsumen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        child: Column(
-          children: <Widget>[
-            CAHomeKonsumen(),
-            TX(),
-            SBHomeKonsumen(),
-            Kategori(),
-            Rekomendasi()
-          ],
+    return Container(
+      child: SingleChildScrollView(
+        child: Container(
+          child: Column(
+            children: <Widget>[
+              CAHomeKonsumen(),
+              TX(),
+              SBHomeKonsumen(),
+              Kategori(),
+              Rekomendasi()
+            ],
+          ),
         ),
       ),
-      bottomNavigationBar: Container(height: 60, child: BNBHomeKonsumen()),
-      floatingActionButton: FloatingActionButton(
-          mini: false,
-          child: Icon(
-            Icons.qr_code_scanner_sharp,
-          ),
-          backgroundColor: Colors.green,
-          onPressed: () {}),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }

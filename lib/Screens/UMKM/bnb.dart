@@ -1,19 +1,16 @@
-import 'package:bits/Screens/HomeKonsumen/homekonsumen_screen.dart';
+import 'package:bits/Screens/UMKM/umkm_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:bits/Screens/HomeKonsumen/Screen/profile_screen.dart';
+import 'package:bits/Screens/UMKM/Profile.dart';
 
-class BNBHomeKonsumen extends StatefulWidget {
+class BNBUMKM extends StatefulWidget {
   @override
-  _BNBHomeKonsumenState createState() => _BNBHomeKonsumenState();
+  _BNBUMKMState createState() => _BNBUMKMState();
 }
 
 int _selectedIndex = 0;
 
-class _BNBHomeKonsumenState extends State<BNBHomeKonsumen> {
-  List<Widget> _widgetOptions = <Widget>[
-    HomeKonsumen(),
-    ProfileScreenKonsumen()
-  ];
+class _BNBUMKMState extends State<BNBUMKM> {
+  List<Widget> _umkmOptions = <Widget>[HomeUMKM(), ProfileScreenUMKM()];
   void _onItemTap(int index) {
     setState(() {
       _selectedIndex = index;
@@ -23,7 +20,7 @@ class _BNBHomeKonsumenState extends State<BNBHomeKonsumen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _widgetOptions.elementAt(_selectedIndex),
+      body: _umkmOptions.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         selectedItemColor: Colors.green,
@@ -48,9 +45,7 @@ class _BNBHomeKonsumenState extends State<BNBHomeKonsumen> {
       ),
       floatingActionButton: FloatingActionButton(
           mini: true,
-          child: Icon(
-            Icons.qr_code_scanner_sharp,
-          ),
+          child: Icon(Icons.add),
           backgroundColor: Colors.green,
           onPressed: () {}),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,

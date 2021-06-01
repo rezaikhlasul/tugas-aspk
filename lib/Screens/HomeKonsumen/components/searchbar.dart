@@ -1,3 +1,4 @@
+import 'package:bits/constants.dart';
 import 'package:flutter/material.dart';
 
 class SBHomeKonsumen extends StatefulWidget {
@@ -11,7 +12,7 @@ class _SBHomeKonsumenState extends State<SBHomeKonsumen> {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
       decoration: BoxDecoration(
-        color: Colors.lightGreen[50],
+        color: kPrimaryLightColor,
         borderRadius: BorderRadius.all(Radius.circular(22)),
       ),
       child: Row(

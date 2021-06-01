@@ -1,5 +1,5 @@
-import 'package:bits/Screens/HomeKonsumen/components/searchbar.dart';
-import 'package:bits/Screens/HomeKonsumen/homekonsumen_screen.dart';
+import 'package:bits/Screens/HomeKonsumen/components/widget.dart';
+
 import 'package:flutter/material.dart';
 
 class Rekomendasi extends StatelessWidget {
@@ -26,27 +26,27 @@ class _ListRekomendasiState extends State<ListRekomendasi> {
     return Container(
       child: ListView(scrollDirection: Axis.horizontal, children: <Widget>[
         MenuRekomendasi(
-          image: "assets/images/circle_avatar.png",
+          image: "assets/images/Konsumen1.jpg",
           teks: "Makanan Ringan",
         ),
         MenuRekomendasi(
-          image: "assets/images/circle_avatar.png",
+          image: "assets/images/Konsumen2.jpg",
           teks: "Manisan",
         ),
         MenuRekomendasi(
-          image: "assets/images/circle_avatar.png",
+          image: "assets/images/Konsumen1.jpg",
           teks: "Olahan Aci",
         ),
         MenuRekomendasi(
-          image: "assets/images/circle_avatar.png",
+          image: "assets/images/Konsumen2.jpg",
           teks: "Olahan Krupuk",
         ),
         MenuRekomendasi(
-          image: "assets/images/circle_avatar.png",
+          image: "assets/images/Konsumen1.jpg",
           teks: "Makanan Ringan",
         ),
         MenuRekomendasi(
-          image: "assets/images/circle_avatar.png",
+          image: "assets/images/Konsumen2.jpg",
           teks: "Manisan",
         ),
         MenuRekomendasi(
@@ -136,147 +136,6 @@ class RekomendasiTitle extends StatelessWidget {
                 }));
               }),
         ],
-      ),
-    );
-  }
-}
-
-class SBrekomendasi extends StatefulWidget {
-  @override
-  _SBrekomendasiState createState() => _SBrekomendasiState();
-}
-
-class _SBrekomendasiState extends State<SBrekomendasi> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Rekomendasi"),
-      ),
-      body: Container(
-        child: SingleChildScrollView(
-          child: Column(
-            children: <Widget>[SBHomeKonsumen(), ListProdukRekomendasi()],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class ListProdukRekomendasi extends StatefulWidget {
-  @override
-  _ListProdukRekomendasiState createState() => _ListProdukRekomendasiState();
-}
-
-class _ListProdukRekomendasiState extends State<ListProdukRekomendasi> {
-  List<Container> daftarListProduk = List();
-
-  var produk = [
-    {
-      "gambar": "assets/images/circle_avatar.png",
-      "nama": "Nama Produk",
-      "rating": "Rating Produk",
-      "kategori": "Kategori Produk",
-      "harga": "Harga Produk",
-      "lokasi": "Lokasi Produk"
-    },
-    {
-      "gambar": "assets/images/circle_avatar.png",
-      "nama": "Nama Produk",
-      "rating": "Rating Produk",
-      "kategori": "Kategori Produk",
-      "harga": "Harga Produk",
-      "lokasi": "Lokasi Produk"
-    },
-    {
-      "gambar": "assets/images/circle_avatar.png",
-      "nama": "Nama Produk",
-      "rating": "Rating Produk",
-      "kategori": "Kategori Produk",
-      "harga": "Harga Produk",
-      "lokasi": "Lokasi Produk"
-    },
-    {
-      "gambar": "assets/images/circle_avatar.png",
-      "nama": "Nama Produk",
-      "rating": "Rating Produk",
-      "kategori": "Kategori Produk",
-      "harga": "Harga Produk",
-      "lokasi": "Lokasi Produk"
-    },
-    {
-      "gambar": "assets/images/circle_avatar.png",
-      "nama": "Nama Produk",
-      "rating": "Rating Produk",
-      "kategori": "Kategori Produk",
-      "harga": "Harga Produk",
-      "lokasi": "Lokasi Produk"
-    },
-    {
-      "gambar": "assets/images/circle_avatar.png",
-      "nama": "Nama Produk",
-      "rating": "Rating Produk",
-      "kategori": "Kategori Produk",
-      "harga": "Harga Produk",
-      "lokasi": "Lokasi Produk"
-    },
-  ];
-
-  _buatlist() async {
-    for (var i = 0; i < produk.length; i++) {
-      final produknya = produk[i];
-      final String gambar = produknya["gambar"];
-      daftarListProduk.add(Container(
-        child: Card(
-          child: Row(
-            children: [
-              Image.asset(
-                "img/$gambar",
-                fit: BoxFit.cover,
-              ),
-              Column(
-                children: <Widget>[
-                  Text(
-                    produknya["nama"],
-                    style: TextStyle(fontSize: 15),
-                  ),
-                  Text(
-                    produknya["rating"],
-                    style: TextStyle(fontSize: 15),
-                  ),
-                  Text(
-                    produknya["kategori"],
-                    style: TextStyle(fontSize: 15),
-                  ),
-                  Text(
-                    produknya["harga"],
-                    style: TextStyle(fontSize: 15),
-                  ),
-                  Text(
-                    produknya["lokasi"],
-                    style: TextStyle(fontSize: 15),
-                  )
-                ],
-              )
-            ],
-          ),
-        ),
-      ));
-    }
-  }
-
-  @override
-  void initState() {
-    _buatlist();
-    super.initState();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: ListView(
-        children: daftarListProduk,
       ),
     );
   }
