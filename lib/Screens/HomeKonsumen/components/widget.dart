@@ -123,15 +123,11 @@ class _ListProdukRekomendasiState extends State<ListProdukRekomendasi> {
                     }));
                   },
                   child: Container(
-                    padding: EdgeInsets.only(left: 20),
+                    margin: EdgeInsets.only(left: 10),
                     decoration: BoxDecoration(
-                        color: kPrimaryHardColor,
-                        borderRadius:
-                            BorderRadius.only(topLeft: Radius.circular(10))),
-                    child: Image.asset(
-                      gambar,
-                      fit: BoxFit.fill,
-                    ),
+                        image: DecorationImage(
+                            image: AssetImage(gambar), fit: BoxFit.cover),
+                        borderRadius: BorderRadius.all(Radius.circular(10))),
                   ),
                 ),
               ),

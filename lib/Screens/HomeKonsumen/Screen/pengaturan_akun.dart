@@ -2,7 +2,7 @@ import 'package:bits/Screens/HomeKonsumen/Screen/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class Pengaturan_Akun extends StatelessWidget {
+class Pengaturan_Konsumen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,9 +26,9 @@ class Pengaturan_Akun extends StatelessWidget {
         child: Container(
           child: Column(
             children: <Widget>[
-              CAProfile(),
-              PengaturanText(),
-              PengaturanWidget()
+              CAProfileKonsumen(),
+              PengaturanText1(),
+              PengaturanWidget1()
             ],
           ),
         ),
@@ -37,7 +37,7 @@ class Pengaturan_Akun extends StatelessWidget {
   }
 }
 
-class PengaturanText extends StatelessWidget {
+class PengaturanText1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -54,7 +54,7 @@ class PengaturanText extends StatelessWidget {
   }
 }
 
-class PengaturanWidget extends StatelessWidget {
+class PengaturanWidget1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(

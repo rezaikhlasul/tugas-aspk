@@ -12,15 +12,8 @@ class _HomeUMKMState extends State<HomeUMKM> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: SingleChildScrollView(
-        child: Container(
-          child: Column(
-            children: <Widget>[
-              CAUMKM(),
-              TXU(),
-            ],
-          ),
-        ),
+      child: Column(
+        children: <Widget>[CAUMKM(), TXU(), Expanded(child: ListProdukUMKM())],
       ),
     );
   }
