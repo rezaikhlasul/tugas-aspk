@@ -1,8 +1,7 @@
 import 'package:bits/Screens/SplashScreen/splash_screen.dart';
-import 'package:bits/Screens/UMKM/home_umkm.dart';
-import 'package:bits/Screens/UMKM/tambah_produk.dart';
 import 'package:bits/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:bits/Screens/UMKM/bnb.dart';
 
 void main() {
   runApp(MyApp());
