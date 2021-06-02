@@ -19,6 +19,6 @@ class MyApp extends StatelessWidget {
           primaryColor: kPrimaryColor,
           scaffoldBackgroundColor: Colors.white,
         ),
-        home: BNBUMKM());
+        home: BNBHomeKonsumen());
   }
 }

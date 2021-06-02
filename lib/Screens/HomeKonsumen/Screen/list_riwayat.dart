@@ -30,28 +30,28 @@ class _ListRiwayatState extends State<ListRiwayat> {
           scrollDirection: Axis.horizontal,
           children: <Widget>[
             MenuRiwayat(
-              image: "assets/images/Makanan_Ringan.png",
+              image: "assets/images/Konsumen1.jpg",
             ),
             MenuRiwayat(
-              image: "assets/images/Manisan.png",
+              image: "assets/images/Konsumen2.jpg",
             ),
             MenuRiwayat(
-              image: "assets/images/Olahan_Aci.png",
+              image: "assets/images/Konsumen1.jpg",
             ),
             MenuRiwayat(
-              image: "assets/images/Olahan_Kerupuk.png",
+              image: "assets/images/Konsumen2.jpg",
             ),
             MenuRiwayat(
-              image: "assets/images/Makanan_Ringan.png",
+              image: "assets/images/Konsumen1.jpg",
             ),
             MenuRiwayat(
-              image: "assets/images/Manisan.png",
+              image: "assets/images/Konsumen2.jpg",
             ),
             MenuRiwayat(
-              image: "assets/images/Olahan_Aci.png",
+              image: "assets/images/Konsumen1.jpg",
             ),
             MenuRiwayat(
-              image: "assets/images/Olahan_Kerupuk.png",
+              image: "assets/images/Konsumen2.jpg",
             ),
           ],
         ),
@@ -70,19 +70,25 @@ class MenuRiwayat extends StatelessWidget {
     return Container(
       padding: EdgeInsets.only(left: 10, bottom: 5),
       child: Card(
-          shape: RoundedRectangleBorder(
-            borderRadius: const BorderRadius.all(
-              Radius.circular(10.0),
+        shape: RoundedRectangleBorder(
+          borderRadius: const BorderRadius.all(
+            Radius.circular(10.0),
+          ),
+        ),
+        child: SizedBox(
+          height: 30,
+          width: 100,
+          child: InkWell(
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(10)),
+                image: DecorationImage(
+                    image: AssetImage(image), fit: BoxFit.cover),
+              ),
             ),
           ),
-          child: Container(
-            child: Center(
-                child: Image.asset(
-              image,
-              scale: 1 / 2,
-              fit: BoxFit.fill,
-            )),
-          )),
+        ),
+      ),
     );
   }
 }

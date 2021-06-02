@@ -6,6 +6,9 @@ import 'package:bits/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:bits/Screens/HomeKonsumen/Screen/hubungi_bits.dart';
+import 'package:bits/Screens/HomeKonsumen/Screen/undang_teman.dart';
+import 'package:bits/Screens/HomeKonsumen/Screen/terakhir_dilihat.dart';
 
 class ProfileScreenKonsumen extends StatefulWidget {
   @override
@@ -165,7 +168,12 @@ class ProfileWidgetKonsumen1 extends StatelessWidget {
                 SizedBox(
                   height: 50,
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return Terakhir_Dilihat();
+                      }));
+                    },
                     child: Container(
                         decoration: BoxDecoration(color: Colors.white),
                         child: Row(
@@ -237,7 +245,12 @@ class ProfileWidgetKonsumen1 extends StatelessWidget {
                 SizedBox(
                   height: 50,
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return Undang_Teman();
+                      }));
+                    },
                     child: Container(
                         decoration: BoxDecoration(color: Colors.white),
                         child: Row(
@@ -293,22 +306,32 @@ class ProfileWidgetKonsumen2 extends StatelessWidget {
           SizedBox(
             height: 70,
             child: InkWell(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return Pengaturan_Konsumen();
+                  }));
+                },
                 child: Column(
-              children: <Widget>[
-                SvgPicture.asset("assets/icons/Konsumen/pengaturan1.svg"),
-                Text("Pengaturan Akun")
-              ],
-            )),
+                  children: <Widget>[
+                    SvgPicture.asset("assets/icons/Konsumen/pengaturan1.svg"),
+                    Text("Pengaturan Akun")
+                  ],
+                )),
           ),
           SizedBox(
             height: 70,
             child: InkWell(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return Hubungi_Bits();
+                  }));
+                },
                 child: Column(
-              children: <Widget>[
-                SvgPicture.asset("assets/icons/Konsumen/Hubungi_bits.svg"),
-                Text("Hubungi Bits")
-              ],
-            )),
+                  children: <Widget>[
+                    SvgPicture.asset("assets/icons/Konsumen/Hubungi_bits.svg"),
+                    Text("Hubungi Bits")
+                  ],
+                )),
           )
         ],
       ),

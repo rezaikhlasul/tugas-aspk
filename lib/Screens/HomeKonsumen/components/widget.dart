@@ -43,7 +43,9 @@ class _ListProdukRekomendasiState extends State<ListProdukRekomendasi> {
       "rating": "Rating Produk",
       "kategori": "Kategori Produk",
       "harga": "Harga Produk",
-      "lokasi": "Lokasi Produk"
+      "lokasi": "Lokasi Produk",
+      "deskripsi":
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius eleifend volutpat. Aliquam nec consequat enim. Nulla ultrices tincidunt mi quis fermentum. Etiam luctus, diam sit amet convallis dictum, ligula lorem facilisis odio, eget aliquam felis ante eu nulla. Donec sagittis sem dui, nec pulvinar magna aliquam sit amet. Maecenas. "
     },
     {
       "gambar": "assets/images/Konsumen2.jpg",
@@ -51,7 +53,9 @@ class _ListProdukRekomendasiState extends State<ListProdukRekomendasi> {
       "rating": "Rating Produk",
       "kategori": "Kategori Produk",
       "harga": "Harga Produk",
-      "lokasi": "Lokasi Produk"
+      "lokasi": "Lokasi Produk",
+      "deskripsi":
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius eleifend volutpat. Aliquam nec consequat enim. Nulla ultrices tincidunt mi quis fermentum. Etiam luctus, diam sit amet convallis dictum, ligula lorem facilisis odio, eget aliquam felis ante eu nulla. Donec sagittis sem dui, nec pulvinar magna aliquam sit amet. Maecenas. "
     },
     {
       "gambar": "assets/images/circle_avatar.png",
@@ -59,7 +63,9 @@ class _ListProdukRekomendasiState extends State<ListProdukRekomendasi> {
       "rating": "Rating Produk",
       "kategori": "Kategori Produk",
       "harga": "Harga Produk",
-      "lokasi": "Lokasi Produk"
+      "lokasi": "Lokasi Produk",
+      "deskripsi":
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius eleifend volutpat. Aliquam nec consequat enim. Nulla ultrices tincidunt mi quis fermentum. Etiam luctus, diam sit amet convallis dictum, ligula lorem facilisis odio, eget aliquam felis ante eu nulla. Donec sagittis sem dui, nec pulvinar magna aliquam sit amet. Maecenas. "
     },
     {
       "gambar": "assets/images/circle_avatar.png",
@@ -67,7 +73,9 @@ class _ListProdukRekomendasiState extends State<ListProdukRekomendasi> {
       "rating": "Rating Produk",
       "kategori": "Kategori Produk",
       "harga": "Harga Produk",
-      "lokasi": "Lokasi Produk"
+      "lokasi": "Lokasi Produk",
+      "deskripsi":
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius eleifend volutpat. Aliquam nec consequat enim. Nulla ultrices tincidunt mi quis fermentum. Etiam luctus, diam sit amet convallis dictum, ligula lorem facilisis odio, eget aliquam felis ante eu nulla. Donec sagittis sem dui, nec pulvinar magna aliquam sit amet. Maecenas. "
     },
     {
       "gambar": "assets/images/circle_avatar.png",
@@ -75,7 +83,9 @@ class _ListProdukRekomendasiState extends State<ListProdukRekomendasi> {
       "rating": "Rating Produk",
       "kategori": "Kategori Produk",
       "harga": "Harga Produk",
-      "lokasi": "Lokasi Produk"
+      "lokasi": "Lokasi Produk",
+      "deskripsi":
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius eleifend volutpat. Aliquam nec consequat enim. Nulla ultrices tincidunt mi quis fermentum. Etiam luctus, diam sit amet convallis dictum, ligula lorem facilisis odio, eget aliquam felis ante eu nulla. Donec sagittis sem dui, nec pulvinar magna aliquam sit amet. Maecenas. "
     },
     {
       "gambar": "assets/images/circle_avatar.png",
@@ -83,7 +93,9 @@ class _ListProdukRekomendasiState extends State<ListProdukRekomendasi> {
       "rating": "Rating Produk",
       "kategori": "Kategori Produk",
       "harga": "Harga Produk",
-      "lokasi": "Lokasi Produk"
+      "lokasi": "Lokasi Produk",
+      "deskripsi":
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius eleifend volutpat. Aliquam nec consequat enim. Nulla ultrices tincidunt mi quis fermentum. Etiam luctus, diam sit amet convallis dictum, ligula lorem facilisis odio, eget aliquam felis ante eu nulla. Donec sagittis sem dui, nec pulvinar magna aliquam sit amet. Maecenas. "
     },
     {
       "gambar": "assets/images/circle_avatar.png",
@@ -91,7 +103,9 @@ class _ListProdukRekomendasiState extends State<ListProdukRekomendasi> {
       "rating": "Rating Produk",
       "kategori": "Kategori Produk",
       "harga": "Harga Produk",
-      "lokasi": "Lokasi Produk"
+      "lokasi": "Lokasi Produk",
+      "deskripsi":
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius eleifend volutpat. Aliquam nec consequat enim. Nulla ultrices tincidunt mi quis fermentum. Etiam luctus, diam sit amet convallis dictum, ligula lorem facilisis odio, eget aliquam felis ante eu nulla. Donec sagittis sem dui, nec pulvinar magna aliquam sit amet. Maecenas. "
     },
     {
       "gambar": "assets/images/circle_avatar.png",
@@ -99,7 +113,9 @@ class _ListProdukRekomendasiState extends State<ListProdukRekomendasi> {
       "rating": "Rating Produk",
       "kategori": "Kategori Produk",
       "harga": "Harga Produk",
-      "lokasi": "Lokasi Produk"
+      "lokasi": "Lokasi Produk",
+      "deskripsi":
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius eleifend volutpat. Aliquam nec consequat enim. Nulla ultrices tincidunt mi quis fermentum. Etiam luctus, diam sit amet convallis dictum, ligula lorem facilisis odio, eget aliquam felis ante eu nulla. Donec sagittis sem dui, nec pulvinar magna aliquam sit amet. Maecenas. "
     },
   ];
 
@@ -110,29 +126,45 @@ class _ListProdukRekomendasiState extends State<ListProdukRekomendasi> {
       daftarListProduk.add(Container(
         padding: EdgeInsets.all(10),
         child: Card(
+          color: kPrimaryLightColor,
           child: Row(
             children: <Widget>[
-              SizedBox(
-                width: 200,
-                height: 250,
-                child: InkWell(
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                      return DetailProduk();
-                    }));
-                  },
-                  child: Container(
-                    margin: EdgeInsets.only(left: 10),
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage(gambar), fit: BoxFit.cover),
-                        borderRadius: BorderRadius.all(Radius.circular(10))),
+              Hero(
+                tag: ['nama'],
+                child: Material(
+                  child: SizedBox(
+                    width: 150,
+                    height: 200,
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return DetailProduk(
+                            gambar: produknya['gambar'],
+                            nama: produknya['nama'],
+                            kategori: produknya['kategori'],
+                            rating: produknya['rating'],
+                            deskripsi: produknya['deskripsi'],
+                            harga: produknya['harga'],
+                            lokasi: produknya['lokasi'],
+                          );
+                        }));
+                      },
+                      child: Container(
+                        margin: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage(gambar), fit: BoxFit.cover),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(10))),
+                      ),
+                    ),
                   ),
                 ),
               ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Container(
                     padding: EdgeInsets.all(5),
@@ -192,8 +224,7 @@ class _ListProdukRekomendasiState extends State<ListProdukRekomendasi> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: GridView.count(
-        crossAxisCount: 1,
+      child: ListView(
         children: daftarListProduk,
       ),
     );
@@ -201,15 +232,126 @@ class _ListProdukRekomendasiState extends State<ListProdukRekomendasi> {
 }
 
 class DetailProduk extends StatelessWidget {
-  DetailProduk({this.nama, this.gambar});
-  final String nama;
-  final String gambar;
+  DetailProduk(
+      {this.gambar,
+      this.nama,
+      this.kategori,
+      this.rating,
+      this.deskripsi,
+      this.harga,
+      this.lokasi});
+  final String gambar, nama, kategori, rating, deskripsi, harga, lokasi;
+
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(),
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        leading: BackButton(
+          color: Colors.black,
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
       ),
+      body: Column(children: <Widget>[
+        Column(
+          children: <Widget>[
+            Container(
+              margin: EdgeInsets.only(top: 20, left: 20, right: 20),
+              height: 200,
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage(gambar), fit: BoxFit.fitHeight),
+                  borderRadius: BorderRadius.all(Radius.circular(10))),
+            ),
+            Container(
+              child: Text(
+                nama,
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+            ),
+            Container(
+              child: Text(kategori,
+                  style: TextStyle(
+                    fontSize: 15,
+                  )),
+            ),
+            Container(
+              child: Text(rating,
+                  style: TextStyle(fontSize: 15, color: Colors.red)),
+            )
+          ],
+        ),
+        Expanded(
+            child: Container(
+          decoration: BoxDecoration(
+              color: kPrimaryColor,
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(30), topRight: Radius.circular(30))),
+          child: SingleChildScrollView(
+            child: Container(
+              margin: EdgeInsets.only(left: 30, top: 30),
+              width: size.width * 1,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 10),
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Container(
+                              child: Text(
+                            "Deskripsi Produk",
+                            style: TextStyle(fontSize: 17, color: Colors.white),
+                          )),
+                          Container(
+                              child: Text(deskripsi,
+                                  maxLines: null,
+                                  style: TextStyle(color: Colors.white))),
+                        ]),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 15),
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Container(
+                              child: Text(
+                            "Harga",
+                            style: TextStyle(fontSize: 17, color: Colors.white),
+                          )),
+                          Container(
+                              child: Text(
+                            harga,
+                            style: TextStyle(color: Colors.white),
+                          )),
+                        ]),
+                  ),
+                  Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Container(
+                            child: Text(
+                          "Lokasi",
+                          style: TextStyle(fontSize: 17, color: Colors.white),
+                        )),
+                        Container(
+                            child: TextButton(
+                                onPressed: () {},
+                                child: Text(
+                                  lokasi,
+                                  style: TextStyle(color: Colors.white),
+                                ))),
+                      ]),
+                ],
+              ),
+            ),
+          ),
+        ))
+      ]),
     );
   }
 }

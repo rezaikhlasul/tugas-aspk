@@ -1,4 +1,5 @@
 import 'package:bits/Screens/HomeKonsumen/components/widget.dart';
+import 'package:bits/constants.dart';
 
 import 'package:flutter/material.dart';
 
@@ -74,9 +75,9 @@ class MenuRekomendasi extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Container(
-            padding: EdgeInsets.only(left: 10),
-            child: Card(
-                color: Colors.lightGreen[50],
+              padding: EdgeInsets.only(left: 10),
+              child: Card(
+                color: kPrimaryLightColor,
                 shape: RoundedRectangleBorder(
                   borderRadius: const BorderRadius.all(
                     Radius.circular(10.0),
@@ -85,13 +86,11 @@ class MenuRekomendasi extends StatelessWidget {
                 child: Container(
                   height: 138,
                   width: 100,
-                  child: Center(
-                      child: Image.asset(
-                    image,
-                    fit: BoxFit.fill,
-                  )),
-                )),
-          ),
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage(image), fit: BoxFit.cover)),
+                ),
+              )),
           Container(
             padding: EdgeInsets.only(left: 10),
             width: 150,
