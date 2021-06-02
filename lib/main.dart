@@ -1,5 +1,4 @@
 import 'package:bits/Screens/SplashScreen/splash_screen.dart';
-
 import 'package:bits/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:bits/Screens/UMKM/bnb.dart';
@@ -20,7 +19,7 @@ class MyApp extends StatelessWidget {
         primaryColor: kPrimaryColor,
         scaffoldBackgroundColor: Colors.white,
       ),
-      home: SplashScreen(),
+      home: HomeUMKM(),
     );
   }
 }
