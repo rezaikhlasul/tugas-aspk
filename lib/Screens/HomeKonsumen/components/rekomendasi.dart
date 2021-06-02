@@ -6,8 +6,9 @@ import 'package:flutter/material.dart';
 class Rekomendasi extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Container(
-        height: 220,
+        height: size.height * 0.3,
         width: double.infinity,
         child: Column(children: <Widget>[
           RekomendasiTitle(),

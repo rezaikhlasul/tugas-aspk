@@ -1,3 +1,4 @@
+import 'package:bits/Screens/HomeKonsumen/components/bottomnavigationbar.dart';
 import 'package:bits/Screens/SplashScreen/splash_screen.dart';
 import 'package:bits/constants.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         primaryColor: kPrimaryColor,
         scaffoldBackgroundColor: Colors.white,
       ),
-      home: HomeUMKM(),
+      home: BNBHomeKonsumen(),
     );
   }
 }

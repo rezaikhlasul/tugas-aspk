@@ -265,7 +265,7 @@ class ProfileWidgetUMKM2 extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           SizedBox(
-            height: 70,
+            height: 80,
             child: InkWell(
                 child: Column(
               children: <Widget>[
@@ -275,7 +275,7 @@ class ProfileWidgetUMKM2 extends StatelessWidget {
             )),
           ),
           SizedBox(
-            height: 70,
+            height: 80,
             child: InkWell(
                 child: Column(
               children: <Widget>[
@@ -285,7 +285,7 @@ class ProfileWidgetUMKM2 extends StatelessWidget {
             )),
           ),
           SizedBox(
-            height: 70,
+            height: 80,
             child: InkWell(
                 child: Column(
               children: <Widget>[

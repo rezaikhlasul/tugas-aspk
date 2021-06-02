@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 class Kategori extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Container(
-        height: 130,
+        height: size.height * 0.2,
         width: double.infinity,
         child: Column(children: <Widget>[
           KategoriTitle(),
@@ -74,6 +75,7 @@ class MenuKategori extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Container(
       child: Column(
         children: <Widget>[
@@ -97,7 +99,7 @@ class MenuKategori extends StatelessWidget {
           ),
           Container(
             padding: EdgeInsets.only(left: 10),
-            width: 80,
+            width: size.width * 0.25,
             child: Text(teks,
                 maxLines: 2,
                 textAlign: TextAlign.center,
