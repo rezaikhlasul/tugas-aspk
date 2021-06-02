@@ -10,6 +10,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:bits/Screens/HomeKonsumen/Screen/hubungi_bits.dart';
 import 'package:bits/Screens/HomeKonsumen/Screen/undang_teman.dart';
 import 'package:bits/Screens/HomeKonsumen/Screen/terakhir_dilihat.dart';
+import 'package:bits/Screens/HomeKonsumen/Screen/pusat_bantuan.dart';
 
 class ProfileScreenKonsumen extends StatefulWidget {
   @override
@@ -308,12 +309,22 @@ class ProfileWidgetKonsumen2 extends StatelessWidget {
           SizedBox(
             height: size.height * 0.1,
             child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return PusatBantuan();
+                      },
+                    ),
+                  );
+                },
                 child: Column(
-              children: <Widget>[
-                SvgPicture.asset("assets/icons/Konsumen/pusat_bantuan.svg"),
-                Text("Pusat Bantuan")
-              ],
-            )),
+                  children: <Widget>[
+                    SvgPicture.asset("assets/icons/Konsumen/pusat_bantuan.svg"),
+                    Text("Pusat Bantuan")
+                  ],
+                )),
           ),
           SizedBox(
             height: size.height * 0.1,
