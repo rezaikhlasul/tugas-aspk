@@ -1,4 +1,5 @@
 import 'package:bits/Screens/HomeKonsumen/Screen/list_riwayat.dart';
+import 'package:bits/Screens/HomeKonsumen/Screen/loyalty.dart';
 import 'package:bits/Screens/HomeKonsumen/Screen/pengaturan_akun.dart';
 import 'package:bits/Screens/HomeKonsumen/components/bottomnavigationbar.dart';
 import 'package:bits/Screens/HomeKonsumen/homekonsumen_screen.dart';
@@ -43,6 +44,7 @@ class _ProfileScreenKonsumenState extends State<ProfileScreenKonsumen> {
         ],
       ),
       body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Container(
           child: Column(
             children: <Widget>[
@@ -105,7 +107,12 @@ class ProfileTextKonsumen extends StatelessWidget {
                         padding: EdgeInsets.only(left: 25),
                         alignment: Alignment.centerRight,
                         icon: Icon(Icons.arrow_forward_ios),
-                        onPressed: () {})
+                        onPressed: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return Loyalty();
+                          }));
+                        })
                   ],
                 ),
               ),
@@ -129,7 +136,12 @@ class ProfileWidgetKonsumen1 extends StatelessWidget {
                 SizedBox(
                   height: 45,
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return Loyalty();
+                      }));
+                    },
                     child: Container(
                         decoration: BoxDecoration(color: Colors.white),
                         child: Row(
