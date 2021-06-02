@@ -6,6 +6,15 @@ import 'package:flutter/material.dart';
 import 'components/linecharts2.dart';
 
 class DetailHasilProduk extends StatelessWidget {
+  DetailHasilProduk(
+      {this.gambar,
+      this.nama,
+      this.kategori,
+      this.rating,
+      this.deskripsi,
+      this.harga,
+      this.lokasi});
+  final String gambar, nama, kategori, rating, deskripsi, harga, lokasi;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -30,8 +39,7 @@ class DetailHasilProduk extends StatelessWidget {
                       width: size.width * 0.8,
                       decoration: BoxDecoration(
                         image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: AssetImage("assets/images/Seblak_jank.jpg")),
+                            fit: BoxFit.cover, image: AssetImage(gambar)),
                         boxShadow: [
                           BoxShadow(
                               color: Colors.black26,
@@ -45,7 +53,7 @@ class DetailHasilProduk extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      "Seblak Jank Daniels",
+                      nama,
                       style:
                           TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     ),
@@ -104,7 +112,7 @@ class DetailHasilProduk extends StatelessWidget {
                           Container(
                             width: size.width * 0.8,
                             child: Text(
-                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut ultricies lectus, a ultrices arcu. Praesent dictum laoreet mauris, vitae vulputate est faucibus ac. Donec eget risus vel elit dapibus lacinia auctor non neque. Integer vel magna ut leo tincidunt facilisis vel in dolor. Suspendisse sapien lacus, suscipit vel accumsan. ",
+                              deskripsi,
                               maxLines: null,
                               textDirection: TextDirection.ltr,
                             ),
@@ -125,7 +133,7 @@ class DetailHasilProduk extends StatelessWidget {
                                 ),
                                 Container(
                                   width: size.width * 0.8,
-                                  child: Text("Rp. 100.000"),
+                                  child: Text(harga),
                                 ),
                               ],
                             ),
@@ -146,8 +154,7 @@ class DetailHasilProduk extends StatelessWidget {
                                 ),
                                 Container(
                                   width: size.width * 0.8,
-                                  child: Text(
-                                      "Jalan Kenangan No 69, Kecamatan Kita"),
+                                  child: Text(lokasi),
                                 ),
                               ],
                             ),
@@ -177,7 +184,8 @@ class DetailHasilProduk extends StatelessWidget {
                                 Container(
                                   margin: EdgeInsets.only(top: 2),
                                   child: Text(
-                                      "Rata-rata penilaian keseluruhan konsumen terhadap produk Seblak Jank Daniels"),
+                                      "Rata-rata penilaian keseluruhan konsumen terhadap produk " +
+                                          nama),
                                 ),
                               ],
                             ),
@@ -190,7 +198,8 @@ class DetailHasilProduk extends StatelessWidget {
                                 Container(
                                   margin: EdgeInsets.only(top: 2),
                                   child: Text(
-                                      "Rata-rata penilaian keseluruhan konsumen terhadap katergori parameter kemasan produk Seblak Jank Daniels"),
+                                      "Rata-rata penilaian keseluruhan konsumen terhadap katergori parameter kemasan produk " +
+                                          nama),
                                 ),
                               ],
                             ),

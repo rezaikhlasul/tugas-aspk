@@ -1,3 +1,4 @@
+import 'package:bits/Screens/UMKM/bnb.dart';
 import 'package:bits/Screens/UMKM/home_umkm.dart';
 import 'package:bits/components/buttons/button_primary.dart';
 import 'package:bits/constants.dart';
@@ -59,7 +60,7 @@ class DownloadCode extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (context) {
-                              return HomeUMKM();
+                              return BNBUMKM();
                             },
                           ),
                         );

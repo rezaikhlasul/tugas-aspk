@@ -1,3 +1,4 @@
+import 'package:bits/Screens/UMKM/detail_hasil.dart';
 import 'package:bits/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -12,67 +13,33 @@ class _ListProdukUMKMState extends State<ListProdukUMKM> {
   var produk = [
     {
       "gambar": "assets/images/Konsumen1.jpg",
-      "nama": "Nama Produk",
-      "rating": "Rating Produk",
-      "kategori": "Kategori Produk",
-      "harga": "Harga Produk",
-      "lokasi": "Lokasi Produk"
+      "nama": "Kerupuk Pisang Gerigi",
+      "kategori": "Keripik",
+      "rating": "4.5",
+      "harga": "Rp 65.000",
+      "lokasi": "Jalan Kenangan Dia No.2",
+      "deskripsi":
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius eleifend volutpat. Aliquam nec consequat enim. Nulla ultrices tincidunt mi quis fermentum. Etiam luctus, diam sit amet convallis dictum, ligula lorem facilisis odio, eget aliquam felis ante eu nulla. Donec sagittis sem dui, nec pulvinar magna aliquam sit amet. Maecenas. "
     },
     {
       "gambar": "assets/images/Konsumen2.jpg",
-      "nama": "Nama Produk",
-      "rating": "Rating Produk",
-      "kategori": "Kategori Produk",
-      "harga": "Harga Produk",
-      "lokasi": "Lokasi Produk"
+      "nama": "Manisan Buah Niang Niang",
+      "rating": "4.5",
+      "kategori": "Manisan",
+      "harga": "Rp 120.000",
+      "lokasi": "Jalan Kenangan Kita NO.1",
+      "deskripsi":
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius eleifend volutpat. Aliquam nec consequat enim. Nulla ultrices tincidunt mi quis fermentum. Etiam luctus, diam sit amet convallis dictum, ligula lorem facilisis odio, eget aliquam felis ante eu nulla. Donec sagittis sem dui, nec pulvinar magna aliquam sit amet. Maecenas. "
     },
     {
-      "gambar": "assets/images/circle_avatar.png",
-      "nama": "Nama Produk",
-      "rating": "Rating Produk",
-      "kategori": "Kategori Produk",
-      "harga": "Harga Produk",
-      "lokasi": "Lokasi Produk"
-    },
-    {
-      "gambar": "assets/images/circle_avatar.png",
-      "nama": "Nama Produk",
-      "rating": "Rating Produk",
-      "kategori": "Kategori Produk",
-      "harga": "Harga Produk",
-      "lokasi": "Lokasi Produk"
-    },
-    {
-      "gambar": "assets/images/circle_avatar.png",
-      "nama": "Nama Produk",
-      "rating": "Rating Produk",
-      "kategori": "Kategori Produk",
-      "harga": "Harga Produk",
-      "lokasi": "Lokasi Produk"
-    },
-    {
-      "gambar": "assets/images/circle_avatar.png",
-      "nama": "Nama Produk",
-      "rating": "Rating Produk",
-      "kategori": "Kategori Produk",
-      "harga": "Harga Produk",
-      "lokasi": "Lokasi Produk"
-    },
-    {
-      "gambar": "assets/images/circle_avatar.png",
-      "nama": "Nama Produk",
-      "rating": "Rating Produk",
-      "kategori": "Kategori Produk",
-      "harga": "Harga Produk",
-      "lokasi": "Lokasi Produk"
-    },
-    {
-      "gambar": "assets/images/circle_avatar.png",
-      "nama": "Nama Produk",
-      "rating": "Rating Produk",
-      "kategori": "Kategori Produk",
-      "harga": "Harga Produk",
-      "lokasi": "Lokasi Produk"
+      "gambar": "assets/images/baso_aci.png",
+      "nama": "Basi Aci Pasti Enak",
+      "rating": "4.5",
+      "kategori": "Olahan Aci",
+      "harga": "Rp 20.000",
+      "lokasi": "Jalan Kenangan Kita NO.99",
+      "deskripsi":
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius eleifend volutpat. Aliquam nec consequat enim. Nulla ultrices tincidunt mi quis fermentum. Etiam luctus, diam sit amet convallis dictum, ligula lorem facilisis odio, eget aliquam felis ante eu nulla. Donec sagittis sem dui, nec pulvinar magna aliquam sit amet. Maecenas. "
     },
   ];
 
@@ -93,7 +60,16 @@ class _ListProdukUMKMState extends State<ListProdukUMKM> {
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                      return DetailProduk();
+                      return DetailHasilProduk(
+                        gambar: produknya['gambar'],
+                        nama: produknya['nama'],
+                        kategori: produknya['kategori'],
+                        rating: produknya['rating'],
+                        deskripsi: produknya['deskripsi'],
+                        harga: produknya['harga'],
+                        lokasi: produknya['lokasi'],
+                      );
+                      ;
                     }));
                   },
                   child: Container(

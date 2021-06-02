@@ -1,3 +1,5 @@
+import 'package:bits/Screens/UMKM/detail_hasil.dart';
+import 'package:bits/Screens/UMKM/tambah_produk.dart';
 import 'package:bits/Screens/UMKM/umkm_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:bits/Screens/UMKM/Profile.dart';
@@ -47,7 +49,16 @@ class _BNBUMKMState extends State<BNBUMKM> {
           mini: true,
           child: Icon(Icons.add),
           backgroundColor: Colors.green,
-          onPressed: () {}),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return TambahProduk();
+                },
+              ),
+            );
+          }),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }

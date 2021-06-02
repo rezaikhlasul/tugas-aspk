@@ -70,7 +70,7 @@ class Body extends StatelessWidget {
           style: TextStyle(color: Colors.black54),
         ),
         onDone: () {
-          Navigator.push(
+          Navigator.pushReplacement(
             context,
             MaterialPageRoute(
               builder: (context) {
