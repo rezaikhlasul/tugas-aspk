@@ -1,3 +1,7 @@
+import 'package:bits/Screens/HomeKonsumen/components/bottomnavigationbar.dart';
+import 'package:bits/Screens/UMKM/detail_hasil.dart';
+import 'package:bits/components/buttons/button_primary.dart';
+import 'package:bits/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
@@ -27,7 +31,16 @@ class _ScanbarcodeState extends State<Scanbarcode> {
     try {
       barcodeScanRes = await FlutterBarcodeScanner.scanBarcode(
           '#ff6666', 'Cancel', true, ScanMode.QR);
-      print(barcodeScanRes);
+      setState(() {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return BNBHomeKonsumen();
+            },
+          ),
+        );
+      });
     } on PlatformException {
       barcodeScanRes = 'Failed to get platform version.';
     }
@@ -66,6 +79,7 @@ class _ScanbarcodeState extends State<Scanbarcode> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(title: const Text('Barcode scan')),
       body: Builder(
@@ -76,17 +90,15 @@ class _ScanbarcodeState extends State<Scanbarcode> {
                   direction: Axis.vertical,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    ElevatedButton(
-                        onPressed: () => scanBarcodeNormal(),
-                        child: Text('Start barcode scan')),
-                    ElevatedButton(
-                        onPressed: () => scanQR(),
-                        child: Text('Start QR scan')),
-                    ElevatedButton(
-                        onPressed: () => startBarcodeScanStream(),
-                        child: Text('Start barcode scan stream')),
-                    Text('Scan result : $_scanBarcode\n',
-                        style: TextStyle(fontSize: 20))
+                    Container(
+                      width: size.width * 0.6,
+                      child: RoundedButtonPrimary(
+                        text: "Lanjutkan Scan Produk",
+                        color: kPrimaryColor,
+                        press: () => scanQR(),
+                        textColor: Colors.white,
+                      ),
+                    ),
                   ]));
         },
       ),
