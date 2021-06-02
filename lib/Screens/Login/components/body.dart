@@ -31,12 +31,12 @@ class Body extends StatelessWidget {
               height: size.height * 0.03,
             ),
             Text(
-              "Login",
+              "Masuk",
               style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                  color: kPrimaryColor,
-                  fontStyle: FontStyle.italic),
+                fontSize: 24,
+                fontWeight: FontWeight.w500,
+                color: kPrimaryColor,
+              ),
             ),
             Flexible(
               flex: 2,
@@ -62,7 +62,7 @@ class Body extends StatelessWidget {
                               Icons.lock,
                               color: kPrimaryColor,
                             ),
-                            hintText: "Password"),
+                            hintText: "Kata sandi"),
                       ),
                     ),
                     Container(
@@ -70,23 +70,41 @@ class Body extends StatelessWidget {
                       child: Column(
                         children: [
                           RoundedAuthButton(
-                            text: "Login",
+                            text: "Masuk",
                             press: () {},
                           ),
-                          RoundedAuthButton(
-                            text: "Sign Up",
-                            color: kPrimaryLightColor,
-                            textColor: Colors.black87,
-                            press: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) {
-                                    return SignUpScreen();
-                                  },
+                          Container(
+                            margin: EdgeInsets.only(top: 5),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Text(
+                                  "Belum memiliki akun ?",
+                                  style: TextStyle(color: Colors.black87),
                                 ),
-                              );
-                            },
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) {
+                                          return SignUpScreen();
+                                        },
+                                      ),
+                                    );
+                                  },
+                                  child: Text(
+                                    "Daftar",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: kPrimaryColor),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                           OrDivider(),
                           Container(
