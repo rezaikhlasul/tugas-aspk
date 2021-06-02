@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 class TX extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Container(
-      padding: EdgeInsets.only(right: 170),
       margin: EdgeInsets.only(left: 10),
+      width: size.width * 0.7,
       color: Colors.white,
-      alignment: Alignment.centerLeft,
       child: Text(
         "Temukan Produk UMKM Yang Kamu Butuhkan !",
         textAlign: TextAlign.justify,
@@ -22,10 +22,10 @@ class TX extends StatelessWidget {
 class TXU extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Container(
-      padding: EdgeInsets.only(right: 170),
       margin: EdgeInsets.only(left: 10),
-      color: Colors.white,
+      height: size.height * 0.05,
       alignment: Alignment.centerLeft,
       child: Text(
         "Lihat Ulasan Produkmu !",

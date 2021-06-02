@@ -47,7 +47,7 @@ class _BNBHomeKonsumenState extends State<BNBHomeKonsumen> {
         onTap: _onItemTap,
       ),
       floatingActionButton: FloatingActionButton(
-          mini: true,
+          mini: false,
           child: Icon(
             Icons.qr_code_scanner_sharp,
           ),

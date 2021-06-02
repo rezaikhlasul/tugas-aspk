@@ -25,6 +25,7 @@ class _HomeKonsumenState extends State<HomeKonsumen> {
       child: SingleChildScrollView(
         child: Container(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               CAHomeKonsumen(),
               TX(),

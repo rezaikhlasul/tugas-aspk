@@ -46,7 +46,7 @@ class _BNBUMKMState extends State<BNBUMKM> {
         onTap: _onItemTap,
       ),
       floatingActionButton: FloatingActionButton(
-          mini: true,
+          mini: false,
           child: Icon(Icons.add),
           backgroundColor: Colors.green,
           onPressed: () {
