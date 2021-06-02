@@ -1,5 +1,6 @@
 import 'package:bits/Screens/Login/components/background.dart';
 import 'package:bits/Screens/SignUp/signup_screen.dart';
+import 'package:bits/Screens/UMKM/home_umkm.dart';
 import 'package:bits/components/buttons/auth/button_auth.dart';
 import 'package:bits/components/buttons/auth/text_field_container_auth.dart';
 import 'package:bits/components/or_divider/or_divider.dart';
@@ -71,7 +72,16 @@ class Body extends StatelessWidget {
                         children: [
                           RoundedAuthButton(
                             text: "Masuk",
-                            press: () {},
+                            press: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return HomeUMKM();
+                                  },
+                                ),
+                              );
+                            },
                           ),
                           Container(
                             margin: EdgeInsets.only(top: 5),
