@@ -59,7 +59,7 @@ class _BNBHomeKonsumenState extends State<BNBHomeKonsumen> {
               context,
               MaterialPageRoute(
                 builder: (context) {
-                  return PertanyaanSurvey();
+                  return Scanbarcode();
                 },
               ),
             );

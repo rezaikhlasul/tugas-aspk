@@ -1,3 +1,4 @@
+import 'package:bits/Screens/HomeKonsumen/Screen/pertanyaan_survey.dart';
 import 'package:bits/Screens/HomeKonsumen/components/bottomnavigationbar.dart';
 import 'package:bits/Screens/UMKM/detail_hasil.dart';
 import 'package:bits/components/buttons/button_primary.dart';
@@ -36,7 +37,7 @@ class _ScanbarcodeState extends State<Scanbarcode> {
           context,
           MaterialPageRoute(
             builder: (context) {
-              return BNBHomeKonsumen();
+              return PertanyaanSurvey();
             },
           ),
         );

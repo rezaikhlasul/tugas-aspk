@@ -1,4 +1,5 @@
 import 'package:accordion/accordion.dart';
+import 'package:bits/Screens/HomeKonsumen/Screen/poin_bertambah.dart';
 import 'package:bits/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -7,12 +8,59 @@ class PertanyaanSurvey extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      appBar: AppBar(
+        actions: <Widget>[
+          Padding(
+              padding: EdgeInsets.only(right: 20.0, top: 15),
+              child: GestureDetector(
+                  onTap: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return PoinBertambah();
+                        },
+                      ),
+                    );
+                  },
+                  child: Text(
+                    "Simpan",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                  ))),
+        ],
+      ),
       body: Container(
         child: Column(
           children: <Widget>[
-            Expanded(flex: 2, child: Container()),
             Expanded(
-                flex: 5,
+                flex: 3,
+                child: Container(
+                  margin: EdgeInsets.only(top: 40),
+                  child: Column(
+                    children: <Widget>[
+                      Container(
+                        height: 125,
+                        width: 125,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(15)),
+                            image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: AssetImage(
+                                    "assets/images/Seblak_jank.jpg"))),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(top: 20),
+                        child: Text(
+                          "Seblak Jank",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500, fontSize: 18),
+                        ),
+                      )
+                    ],
+                  ),
+                )),
+            Expanded(
+                flex: 7,
                 child: Container(
                   width: size.width,
                   decoration: BoxDecoration(
@@ -121,7 +169,7 @@ class PertanyaanSurvey extends StatelessWidget {
                               )
                             ],
                           ),
-                        )
+                        ),
                       ],
                     ),
                   ),
