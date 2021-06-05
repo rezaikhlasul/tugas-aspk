@@ -1,3 +1,5 @@
+import 'package:bits/Screens/HomeKonsumen/components/manisan.dart';
+import 'package:bits/constants.dart';
 import 'package:flutter/material.dart';
 
 class Kategori extends StatelessWidget {
@@ -29,36 +31,43 @@ class _ListKategoriState extends State<ListKategori> {
           scrollDirection: Axis.horizontal,
           children: <Widget>[
             MenuKategori(
-              teks: "Makanan Ringan",
-              image: "assets/images/Makanan_Ringan.png",
+              nama: "Makanan Ringan",
+              image: "assets/images/makanan_ringan.png",
+            ),
+            InkWell(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return SBManisan();
+                }));
+              },
+              child: MenuKategori(
+                nama: "Manisan",
+                image: "assets/images/manisan.png",
+              ),
             ),
             MenuKategori(
-              teks: "Manisan",
-              image: "assets/images/Manisan.png",
+              nama: "Olahan Aci",
+              image: "assets/images/olahan_aci.png",
             ),
             MenuKategori(
-              teks: "Olahan Aci",
-              image: "assets/images/Olahan_Aci.png",
+              nama: "Olahan Kerupuk",
+              image: "assets/images/olahan_kerupuk.png",
             ),
             MenuKategori(
-              teks: "Olahan Kerupuk",
-              image: "assets/images/Olahan_Kerupuk.png",
+              nama: "Makanan Ringan",
+              image: "assets/images/makanan_ringan.png",
             ),
             MenuKategori(
-              teks: "Makanan Ringan",
-              image: "assets/images/Makanan_Ringan.png",
+              nama: "Manisan",
+              image: "assets/images/manisan.png",
             ),
             MenuKategori(
-              teks: "Manisan",
-              image: "assets/images/Manisan.png",
+              nama: "Olahan Aci",
+              image: "assets/images/olahan_aci.png",
             ),
             MenuKategori(
-              teks: "Olahan Aci",
-              image: "assets/images/Olahan_Aci.png",
-            ),
-            MenuKategori(
-              teks: "Olahan Kerupuk",
-              image: "assets/images/Olahan_Kerupuk.png",
+              nama: "Olahan Kerupuk",
+              image: "assets/images/olahan_kerupuk.png",
             ),
           ],
         ),
@@ -67,11 +76,12 @@ class _ListKategoriState extends State<ListKategori> {
   }
 }
 
+// ignore: must_be_immutable
 class MenuKategori extends StatelessWidget {
-  MenuKategori({this.image, this.teks});
+  MenuKategori({this.image, this.nama});
 
   String image;
-  String teks;
+  String nama;
 
   @override
   Widget build(BuildContext context) {
@@ -82,7 +92,7 @@ class MenuKategori extends StatelessWidget {
           Container(
             padding: EdgeInsets.only(left: 10, bottom: 5),
             child: Card(
-                color: Colors.lightGreen[50],
+                color: kPrimaryLightColor,
                 shape: RoundedRectangleBorder(
                   borderRadius: const BorderRadius.all(
                     Radius.circular(5.0),
@@ -94,13 +104,14 @@ class MenuKategori extends StatelessWidget {
                   child: Center(
                       child: Image.asset(
                     image,
+                    fit: BoxFit.cover,
                   )),
                 )),
           ),
           Container(
             padding: EdgeInsets.only(left: 10),
             width: size.width * 0.25,
-            child: Text(teks,
+            child: Text(nama,
                 maxLines: 2,
                 textAlign: TextAlign.center,
                 style: TextStyle(
