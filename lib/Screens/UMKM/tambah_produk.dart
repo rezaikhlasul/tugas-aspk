@@ -1,12 +1,40 @@
+import 'package:bits/Model/produk.dart';
 import 'package:bits/Screens/UMKM/Download_barcode.dart';
 import 'package:bits/components/buttons/auth/button_auth.dart';
 import 'package:bits/constants.dart';
+import 'package:bits/providers/product_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 
-class TambahProduk extends StatelessWidget {
+class TambahProduk extends StatefulWidget {
+  final Produk produk;
+
+  TambahProduk({this.produk});
+
+  @override
+  _TambahProdukState createState() => _TambahProdukState();
+}
+
+class _TambahProdukState extends State<TambahProduk> {
+  final produkController = TextEditingController();
+
+  @override
+  void dispose() {
+    produkController.dispose();
+    super.dispose();
+  }
+
+  @override
+  void initState() {
+    final produkProvider = Provider.of<ProductProvider>(context, listen: false);
+    produkProvider.loadAll(null);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
+    final productProvider = Provider.of<ProductProvider>(context);
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
@@ -122,6 +150,8 @@ class TambahProduk extends StatelessWidget {
                             child: TextField(
                               decoration:
                                   InputDecoration(labelText: "Nama Produk"),
+                              onChanged: (String namaProduk) =>
+                                  productProvider.changeNamaProduk = namaProduk,
                             ),
                           ),
                           Container(
@@ -135,6 +165,22 @@ class TambahProduk extends StatelessWidget {
                             child: TextField(
                               decoration:
                                   InputDecoration(labelText: "Kategori"),
+                              onChanged: (String kategori) =>
+                                  productProvider.changeKategori = kategori,
+                            ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(bottom: 10),
+                            padding: EdgeInsets.symmetric(
+                                vertical: 5, horizontal: 20),
+                            width: size.width * 0.7,
+                            decoration: BoxDecoration(
+                                color: kPrimaryLightColor,
+                                borderRadius: BorderRadius.circular(25)),
+                            child: TextField(
+                              decoration: InputDecoration(labelText: "Gambar"),
+                              onChanged: (String gambar) =>
+                                  productProvider.changeGambar = gambar,
                             ),
                           ),
                         ],
@@ -183,6 +229,8 @@ class TambahProduk extends StatelessWidget {
                             child: TextField(
                               decoration:
                                   InputDecoration(labelText: "Deskripsi"),
+                              onChanged: (String deskripsi) =>
+                                  productProvider.changeDeskripsi = deskripsi,
                               keyboardType: TextInputType.multiline,
                               maxLines: null,
                             ),
@@ -198,6 +246,8 @@ class TambahProduk extends StatelessWidget {
                             child: TextField(
                               keyboardType: TextInputType.number,
                               decoration: InputDecoration(labelText: "Harga"),
+                              onChanged: (String harga) =>
+                                  productProvider.changeHarga = harga,
                             ),
                           ),
                           Container(
@@ -210,6 +260,8 @@ class TambahProduk extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(25)),
                             child: TextField(
                               decoration: InputDecoration(labelText: "Lokasi"),
+                              onChanged: (String lokasi) =>
+                                  productProvider.changeLokasi = lokasi,
                             ),
                           ),
                         ],
@@ -231,6 +283,7 @@ class TambahProduk extends StatelessWidget {
                         backgroundColor: kPrimaryColor,
                       ),
                       onPressed: () {
+                        productProvider.saveProduct();
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
