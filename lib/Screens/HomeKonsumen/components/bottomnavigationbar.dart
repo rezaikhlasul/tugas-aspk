@@ -1,3 +1,4 @@
+import 'package:bits/Screens/HomeKonsumen/Screen/pertanyaan_survey.dart';
 import 'package:bits/Screens/HomeKonsumen/Screen/scanbarcode.dart';
 import 'package:bits/Screens/HomeKonsumen/homekonsumen_screen.dart';
 import 'package:flutter/material.dart';
@@ -58,7 +59,7 @@ class _BNBHomeKonsumenState extends State<BNBHomeKonsumen> {
               context,
               MaterialPageRoute(
                 builder: (context) {
-                  return Scanbarcode();
+                  return PertanyaanSurvey();
                 },
               ),
             );
