@@ -47,12 +47,6 @@ class _ListRiwayatState extends State<ListRiwayat> {
             MenuRiwayat(
               image: "assets/images/Konsumen2.jpg",
             ),
-            MenuRiwayat(
-              image: "assets/images/Konsumen1.jpg",
-            ),
-            MenuRiwayat(
-              image: "assets/images/Konsumen2.jpg",
-            ),
           ],
         ),
       ),

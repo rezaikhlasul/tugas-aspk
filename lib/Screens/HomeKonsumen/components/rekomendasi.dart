@@ -29,11 +29,11 @@ class _ListRekomendasiState extends State<ListRekomendasi> {
       child: ListView(scrollDirection: Axis.horizontal, children: <Widget>[
         MenuRekomendasi(
           image: "assets/images/Konsumen1.jpg",
-          teks: "Makanan Ringan",
+          teks: "Keripik Pisang",
         ),
         MenuRekomendasi(
           image: "assets/images/Konsumen2.jpg",
-          teks: "Manisan",
+          teks: "Manisan Buah",
         ),
         MenuRekomendasi(
           image: "assets/images/Konsumen1.jpg",
@@ -50,14 +50,6 @@ class _ListRekomendasiState extends State<ListRekomendasi> {
         MenuRekomendasi(
           image: "assets/images/Konsumen2.jpg",
           teks: "Manisan",
-        ),
-        MenuRekomendasi(
-          image: "assets/images/circle_avatar.png",
-          teks: "Olahan Aci",
-        ),
-        MenuRekomendasi(
-          image: "assets/images/circle_avatar.png",
-          teks: "Olahan Krupuk",
         ),
       ]),
     );
