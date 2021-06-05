@@ -1,10 +1,15 @@
+import 'dart:io';
+
 import 'package:bits/Model/produk.dart';
 import 'package:bits/Screens/UMKM/Download_barcode.dart';
 import 'package:bits/components/buttons/auth/button_auth.dart';
 import 'package:bits/constants.dart';
 import 'package:bits/providers/product_provider.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:provider/provider.dart';
 
 class TambahProduk extends StatefulWidget {
@@ -17,6 +22,7 @@ class TambahProduk extends StatefulWidget {
 }
 
 class _TambahProdukState extends State<TambahProduk> {
+  String imageUrl;
   final produkController = TextEditingController();
 
   @override
@@ -35,6 +41,9 @@ class _TambahProdukState extends State<TambahProduk> {
   @override
   Widget build(BuildContext context) {
     final productProvider = Provider.of<ProductProvider>(context);
+    setState(() {
+      productProvider.changeGambar = imageUrl;
+    });
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
@@ -81,29 +90,33 @@ class _TambahProdukState extends State<TambahProduk> {
                           SizedBox(
                             height: 20,
                           ),
-                          Container(
-                            height: 150,
-                            width: 150,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              border: Border.all(color: Colors.black, width: 2),
-                            ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                TextButton(
-                                  onPressed: () {},
-                                  style: TextButton.styleFrom(
-                                    padding: EdgeInsets.all(5),
-                                    backgroundColor: kPrimaryColor,
-                                  ),
-                                  child: Text(
-                                    "Tambah Photo",
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                )
-                              ],
-                            ),
+                          Column(
+                            children: [
+                              Container(
+                                height: 150,
+                                width: 150,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      fit: BoxFit.cover,
+                                      image: NetworkImage((imageUrl != null)
+                                          ? imageUrl
+                                          : "https://pertaniansehat.com/v01/wp-content/uploads/2015/08/default-placeholder.png")),
+                                  border:
+                                      Border.all(color: Colors.black, width: 2),
+                                ),
+                              ),
+                              TextButton(
+                                onPressed: () => uploadImage(),
+                                style: TextButton.styleFrom(
+                                  padding: EdgeInsets.all(5),
+                                  backgroundColor: kPrimaryColor,
+                                ),
+                                child: Text(
+                                  "Tambah Photo",
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ),
+                            ],
                           )
                         ],
                       ),
@@ -167,20 +180,6 @@ class _TambahProdukState extends State<TambahProduk> {
                                   InputDecoration(labelText: "Kategori"),
                               onChanged: (String kategori) =>
                                   productProvider.changeKategori = kategori,
-                            ),
-                          ),
-                          Container(
-                            margin: EdgeInsets.only(bottom: 10),
-                            padding: EdgeInsets.symmetric(
-                                vertical: 5, horizontal: 20),
-                            width: size.width * 0.7,
-                            decoration: BoxDecoration(
-                                color: kPrimaryLightColor,
-                                borderRadius: BorderRadius.circular(25)),
-                            child: TextField(
-                              decoration: InputDecoration(labelText: "Gambar"),
-                              onChanged: (String gambar) =>
-                                  productProvider.changeGambar = gambar,
                             ),
                           ),
                         ],
@@ -308,5 +307,40 @@ class _TambahProdukState extends State<TambahProduk> {
         ),
       ),
     );
+  }
+
+  Future<void> uploadImage() async {
+    final _storage = FirebaseStorage.instance;
+    final _picker = ImagePicker();
+    PickedFile pickimage;
+    //permission
+
+    await Permission.photos.request();
+    var permissionStatus = await Permission.photos.status;
+    if (permissionStatus.isGranted) {
+      pickimage = await _picker.getImage(source: ImageSource.gallery);
+      if (pickimage != null) {
+        var file = File(pickimage.path);
+
+        String fileName = file.uri.path.split('/').last;
+
+        var filePath = await _storage
+            .ref()
+            .child('demo/$fileName')
+            .putFile(file)
+            .then((value) {
+          return value;
+        });
+
+        String downloadURL = await filePath.ref.getDownloadURL();
+
+        setState(() {
+          imageUrl = downloadURL;
+        });
+        print(downloadURL);
+      } else {
+        print('no selected');
+      }
+    }
   }
 }
