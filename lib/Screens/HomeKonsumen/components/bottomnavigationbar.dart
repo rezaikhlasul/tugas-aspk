@@ -1,3 +1,5 @@
+import 'package:bits/Screens/HomeKonsumen/Screen/pertanyaan_survey.dart';
+import 'package:bits/Screens/HomeKonsumen/Screen/scanbarcode.dart';
 import 'package:bits/Screens/HomeKonsumen/homekonsumen_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:bits/Screens/HomeKonsumen/Screen/profile_screen.dart';
@@ -47,12 +49,21 @@ class _BNBHomeKonsumenState extends State<BNBHomeKonsumen> {
         onTap: _onItemTap,
       ),
       floatingActionButton: FloatingActionButton(
-          mini: false,
+          mini: true,
           child: Icon(
             Icons.qr_code_scanner_sharp,
           ),
           backgroundColor: Colors.green,
-          onPressed: () {}),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return Scanbarcode();
+                },
+              ),
+            );
+          }),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }

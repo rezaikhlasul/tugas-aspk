@@ -1,12 +1,49 @@
+import 'dart:io';
+
+import 'package:bits/Model/produk.dart';
 import 'package:bits/Screens/UMKM/Download_barcode.dart';
 import 'package:bits/components/buttons/auth/button_auth.dart';
 import 'package:bits/constants.dart';
+import 'package:bits/providers/product_provider.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:permission_handler/permission_handler.dart';
+import 'package:provider/provider.dart';
 
-class TambahProduk extends StatelessWidget {
+class TambahProduk extends StatefulWidget {
+  final Produk produk;
+
+  TambahProduk({this.produk});
+
+  @override
+  _TambahProdukState createState() => _TambahProdukState();
+}
+
+class _TambahProdukState extends State<TambahProduk> {
+  String imageUrl;
+  final produkController = TextEditingController();
+
+  @override
+  void dispose() {
+    produkController.dispose();
+    super.dispose();
+  }
+
+  @override
+  void initState() {
+    final produkProvider = Provider.of<ProductProvider>(context, listen: false);
+    produkProvider.loadAll(null);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
+    final productProvider = Provider.of<ProductProvider>(context);
+    setState(() {
+      productProvider.changeGambar = imageUrl;
+    });
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
@@ -53,29 +90,33 @@ class TambahProduk extends StatelessWidget {
                           SizedBox(
                             height: 20,
                           ),
-                          Container(
-                            height: 150,
-                            width: 150,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              border: Border.all(color: Colors.black, width: 2),
-                            ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                TextButton(
-                                  onPressed: () {},
-                                  style: TextButton.styleFrom(
-                                    padding: EdgeInsets.all(5),
-                                    backgroundColor: kPrimaryColor,
-                                  ),
-                                  child: Text(
-                                    "Tambah Photo",
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                )
-                              ],
-                            ),
+                          Column(
+                            children: [
+                              Container(
+                                height: 150,
+                                width: 150,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      fit: BoxFit.cover,
+                                      image: NetworkImage((imageUrl != null)
+                                          ? imageUrl
+                                          : "https://pertaniansehat.com/v01/wp-content/uploads/2015/08/default-placeholder.png")),
+                                  border:
+                                      Border.all(color: Colors.black, width: 2),
+                                ),
+                              ),
+                              TextButton(
+                                onPressed: () => uploadImage(),
+                                style: TextButton.styleFrom(
+                                  padding: EdgeInsets.all(5),
+                                  backgroundColor: kPrimaryColor,
+                                ),
+                                child: Text(
+                                  "Tambah Photo",
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ),
+                            ],
                           )
                         ],
                       ),
@@ -122,6 +163,8 @@ class TambahProduk extends StatelessWidget {
                             child: TextField(
                               decoration:
                                   InputDecoration(labelText: "Nama Produk"),
+                              onChanged: (String namaProduk) =>
+                                  productProvider.changeNamaProduk = namaProduk,
                             ),
                           ),
                           Container(
@@ -135,6 +178,8 @@ class TambahProduk extends StatelessWidget {
                             child: TextField(
                               decoration:
                                   InputDecoration(labelText: "Kategori"),
+                              onChanged: (String kategori) =>
+                                  productProvider.changeKategori = kategori,
                             ),
                           ),
                         ],
@@ -183,6 +228,8 @@ class TambahProduk extends StatelessWidget {
                             child: TextField(
                               decoration:
                                   InputDecoration(labelText: "Deskripsi"),
+                              onChanged: (String deskripsi) =>
+                                  productProvider.changeDeskripsi = deskripsi,
                               keyboardType: TextInputType.multiline,
                               maxLines: null,
                             ),
@@ -198,6 +245,8 @@ class TambahProduk extends StatelessWidget {
                             child: TextField(
                               keyboardType: TextInputType.number,
                               decoration: InputDecoration(labelText: "Harga"),
+                              onChanged: (String harga) =>
+                                  productProvider.changeHarga = harga,
                             ),
                           ),
                           Container(
@@ -210,6 +259,8 @@ class TambahProduk extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(25)),
                             child: TextField(
                               decoration: InputDecoration(labelText: "Lokasi"),
+                              onChanged: (String lokasi) =>
+                                  productProvider.changeLokasi = lokasi,
                             ),
                           ),
                         ],
@@ -231,6 +282,7 @@ class TambahProduk extends StatelessWidget {
                         backgroundColor: kPrimaryColor,
                       ),
                       onPressed: () {
+                        productProvider.saveProduct();
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
@@ -255,5 +307,40 @@ class TambahProduk extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future<void> uploadImage() async {
+    final _storage = FirebaseStorage.instance;
+    final _picker = ImagePicker();
+    PickedFile pickimage;
+    //permission
+
+    await Permission.photos.request();
+    var permissionStatus = await Permission.photos.status;
+    if (permissionStatus.isGranted) {
+      pickimage = await _picker.getImage(source: ImageSource.gallery);
+      if (pickimage != null) {
+        var file = File(pickimage.path);
+
+        String fileName = file.uri.path.split('/').last;
+
+        var filePath = await _storage
+            .ref()
+            .child('demo/$fileName')
+            .putFile(file)
+            .then((value) {
+          return value;
+        });
+
+        String downloadURL = await filePath.ref.getDownloadURL();
+
+        setState(() {
+          imageUrl = downloadURL;
+        });
+        print(downloadURL);
+      } else {
+        print('no selected');
+      }
+    }
   }
 }

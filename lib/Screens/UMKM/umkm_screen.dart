@@ -1,4 +1,5 @@
 import 'package:bits/Screens/HomeKonsumen/components/textbiasa.dart';
+import 'package:bits/Screens/UMKM/listproduct.dart';
 import 'package:flutter/material.dart';
 import "package:bits/Screens/UMKM/circle_avatar.dart";
 import 'package:bits/Screens/UMKM/listproduk.dart';
@@ -13,7 +14,7 @@ class _HomeUMKMState extends State<HomeUMKM> {
   Widget build(BuildContext context) {
     return Container(
       child: Column(
-        children: <Widget>[CAUMKM(), TXU(), Expanded(child: ListProdukUMKM())],
+        children: <Widget>[CAUMKM(), TXU(), Expanded(child: ListProduct())],
       ),
     );
   }

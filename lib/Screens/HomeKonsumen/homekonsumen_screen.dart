@@ -6,6 +6,7 @@ import 'package:bits/Screens/HomeKonsumen/components/background.dart';
 import 'package:bits/Screens/HomeKonsumen/components/body.dart';
 import 'package:bits/Screens/HomeKonsumen/components/circleavatar.dart';
 import 'package:bits/Screens/HomeKonsumen/components/rekomendasi.dart';
+import 'package:bits/Screens/HomeKonsumen/components/rekomendasi_produk.dart';
 import 'package:bits/Screens/HomeKonsumen/components/searchbar.dart';
 import 'package:bits/Screens/HomeKonsumen/components/textbiasa.dart';
 import 'package:bits/Screens/Login/login_screen.dart';
@@ -30,8 +31,11 @@ class _HomeKonsumenState extends State<HomeKonsumen> {
               CAHomeKonsumen(),
               TX(),
               SBHomeKonsumen(),
+              SizedBox(
+                height: 50,
+              ),
               Kategori(),
-              Rekomendasi()
+              RekomendasiProduk()
             ],
           ),
         ),

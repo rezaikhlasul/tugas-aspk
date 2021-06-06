@@ -10,11 +10,10 @@ class DetailHasilProduk extends StatelessWidget {
       {this.gambar,
       this.nama,
       this.kategori,
-      this.rating,
       this.deskripsi,
       this.harga,
       this.lokasi});
-  final String gambar, nama, kategori, rating, deskripsi, harga, lokasi;
+  final String gambar, nama, kategori, deskripsi, harga, lokasi;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -39,7 +38,7 @@ class DetailHasilProduk extends StatelessWidget {
                       width: size.width * 0.8,
                       decoration: BoxDecoration(
                         image: DecorationImage(
-                            fit: BoxFit.cover, image: AssetImage(gambar)),
+                            fit: BoxFit.cover, image: NetworkImage(gambar)),
                         boxShadow: [
                           BoxShadow(
                               color: Colors.black26,
