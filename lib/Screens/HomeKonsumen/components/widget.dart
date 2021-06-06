@@ -1,3 +1,4 @@
+import 'package:bits/Screens/HomeKonsumen/components/listproductlengkap.dart';
 import 'package:bits/Screens/HomeKonsumen/components/searchbar.dart';
 import 'package:bits/Screens/HomeKonsumen/homekonsumen_screen.dart';
 import 'package:bits/constants.dart';
@@ -20,7 +21,7 @@ class _SBrekomendasiState extends State<SBrekomendasi> {
         child: Column(
           children: <Widget>[
             SBHomeKonsumen(),
-            Expanded(child: ListProdukRekomendasi())
+            Expanded(child: ListProdukLengkap())
           ],
         ),
       ),
@@ -143,7 +144,6 @@ class _ListProdukRekomendasiState extends State<ListProdukRekomendasi> {
                             gambar: produknya['gambar'],
                             nama: produknya['nama'],
                             kategori: produknya['kategori'],
-                            rating: produknya['rating'],
                             deskripsi: produknya['deskripsi'],
                             harga: produknya['harga'],
                             lokasi: produknya['lokasi'],
@@ -236,11 +236,10 @@ class DetailProduk extends StatelessWidget {
       {this.gambar,
       this.nama,
       this.kategori,
-      this.rating,
       this.deskripsi,
       this.harga,
       this.lokasi});
-  final String gambar, nama, kategori, rating, deskripsi, harga, lokasi;
+  final String gambar, nama, kategori, deskripsi, harga, lokasi;
 
   @override
   Widget build(BuildContext context) {
@@ -263,7 +262,7 @@ class DetailProduk extends StatelessWidget {
               height: 200,
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage(gambar), fit: BoxFit.fitHeight),
+                      image: NetworkImage(gambar), fit: BoxFit.fitHeight),
                   borderRadius: BorderRadius.all(Radius.circular(10))),
             ),
             Container(
@@ -279,7 +278,7 @@ class DetailProduk extends StatelessWidget {
                   )),
             ),
             Container(
-              child: Text(rating,
+              child: Text("4.5",
                   style: TextStyle(fontSize: 15, color: Colors.red)),
             )
           ],

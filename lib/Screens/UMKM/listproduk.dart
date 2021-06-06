@@ -64,7 +64,6 @@ class _ListProdukUMKMState extends State<ListProdukUMKM> {
                         gambar: produknya['gambar'],
                         nama: produknya['nama'],
                         kategori: produknya['kategori'],
-                        rating: produknya['rating'],
                         deskripsi: produknya['deskripsi'],
                         harga: produknya['harga'],
                         lokasi: produknya['lokasi'],
