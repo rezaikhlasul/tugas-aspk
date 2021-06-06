@@ -1,4 +1,8 @@
 import 'package:bits/Screens/HomeKonsumen/Screen/profile_screen.dart';
+import 'package:bits/Screens/Login/login_screen.dart';
+import 'package:bits/service/authService.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -37,24 +41,58 @@ class Pengaturan_Konsumen extends StatelessWidget {
   }
 }
 
-class PengaturanText1 extends StatelessWidget {
+class PengaturanText1 extends StatefulWidget {
+  @override
+  _PengaturanText1State createState() => _PengaturanText1State();
+}
+
+class _PengaturanText1State extends State<PengaturanText1> {
+  String namaLengkap;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: <Widget>[
-          Center(
-              child: Container(
-                  margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                  child: Text("Aspk Kelompok 1",
-                      style: TextStyle(fontSize: 15, color: Colors.black)))),
-        ],
-      ),
+    return FutureBuilder(
+      future: _fetch(),
+      builder: (context, snapshot) {
+        return Container(
+          child: Column(
+            children: <Widget>[
+              Center(
+                  child: Container(
+                      margin:
+                          EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                      child: Text(namaLengkap,
+                          style:
+                              TextStyle(fontSize: 15, color: Colors.black)))),
+            ],
+          ),
+        );
+      },
     );
+  }
+
+  _fetch() async {
+    final userData = await FirebaseAuth.instance.currentUser;
+    if (userData != null)
+      await FirebaseFirestore.instance
+          .collection('user')
+          .doc(userData.uid)
+          .get()
+          .then((ds) {
+        namaLengkap = ds.data()['namaLengkap'];
+      }).catchError((e) {
+        print(e);
+      });
+    print(namaLengkap);
   }
 }
 
-class PengaturanWidget1 extends StatelessWidget {
+class PengaturanWidget1 extends StatefulWidget {
+  @override
+  _PengaturanWidget1State createState() => _PengaturanWidget1State();
+}
+
+class _PengaturanWidget1State extends State<PengaturanWidget1> {
+  final AuthService _auth = AuthService();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -307,7 +345,17 @@ class PengaturanWidget1 extends StatelessWidget {
                 SizedBox(
                   height: 45,
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () async {
+                      await _auth.signOut();
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return LoginScreen();
+                          },
+                        ),
+                      );
+                    },
                     child: Container(
                         decoration: BoxDecoration(color: Colors.white),
                         child: Row(
