@@ -1,4 +1,5 @@
 import 'package:bits/Screens/HomeKonsumen/components/bottomnavigationbar.dart';
+import 'package:bits/Screens/Login/login_screen.dart';
 import 'package:bits/Screens/UMKM/bnb.dart';
 import 'package:bits/constants.dart';
 import 'package:bits/providers/product_provider.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
           primaryColor: kPrimaryColor,
           scaffoldBackgroundColor: Colors.white,
         ),
-        home: BNBHomeKonsumen(),
+        home: LoginScreen(),
       ),
     );
   }

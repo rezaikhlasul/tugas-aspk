@@ -5,6 +5,8 @@ import 'package:bits/Screens/HomeKonsumen/components/bottomnavigationbar.dart';
 import 'package:bits/Screens/HomeKonsumen/homekonsumen_screen.dart';
 import 'package:bits/Screens/KonsumenReza/koin_screen.dart';
 import 'package:bits/constants.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -78,50 +80,79 @@ class CAProfileKonsumen extends StatelessWidget {
   }
 }
 
-class ProfileTextKonsumen extends StatelessWidget {
+class ProfileTextKonsumen extends StatefulWidget {
+  @override
+  _ProfileTextKonsumenState createState() => _ProfileTextKonsumenState();
+}
+
+class _ProfileTextKonsumenState extends State<ProfileTextKonsumen> {
+  String namaLengkap;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Container(
-      child: Column(
-        children: <Widget>[
-          Center(
-              child: Container(
+    return FutureBuilder(
+      future: _fetch(),
+      builder: (context, snapshot) {
+        return Container(
+          child: Column(
+            children: <Widget>[
+              Center(
+                  child: Container(
+                      margin:
+                          EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                      child: Text(namaLengkap,
+                          style:
+                              TextStyle(fontSize: 15, color: Colors.black)))),
+              Center(
+                child: Container(
+                  width: size.width * 0.5,
+                  height: 40,
                   margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                  child: Text("Aspk Kelompok 1",
-                      style: TextStyle(fontSize: 15, color: Colors.black)))),
-          Center(
-            child: Container(
-              width: size.width * 0.5,
-              height: 40,
-              margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-              decoration: BoxDecoration(
-                  color: Colors.green,
-                  borderRadius: BorderRadius.all(Radius.circular(30))),
-              child: Container(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text("Member Silver",
-                        style: TextStyle(fontSize: 15, color: Colors.black)),
-                    IconButton(
-                        padding: EdgeInsets.only(left: 25),
-                        alignment: Alignment.centerRight,
-                        icon: Icon(Icons.arrow_forward_ios),
-                        onPressed: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) {
-                            return Loyalty();
-                          }));
-                        })
-                  ],
+                  decoration: BoxDecoration(
+                      color: Colors.green,
+                      borderRadius: BorderRadius.all(Radius.circular(30))),
+                  child: Container(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text("Member Silver",
+                            style:
+                                TextStyle(fontSize: 15, color: Colors.black)),
+                        IconButton(
+                            padding: EdgeInsets.only(left: 25),
+                            alignment: Alignment.centerRight,
+                            icon: Icon(Icons.arrow_forward_ios),
+                            onPressed: () {
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (context) {
+                                return Loyalty();
+                              }));
+                            })
+                      ],
+                    ),
+                  ),
                 ),
               ),
-            ),
+            ],
           ),
-        ],
-      ),
+        );
+      },
     );
+  }
+
+  _fetch() async {
+    final userData = await FirebaseAuth.instance.currentUser;
+    if (userData != null)
+      await FirebaseFirestore.instance
+          .collection('user')
+          .doc(userData.uid)
+          .get()
+          .then((ds) {
+        namaLengkap = ds.data()['namaLengkap'];
+      }).catchError((e) {
+        print(e);
+      });
+    print(namaLengkap);
   }
 }
 

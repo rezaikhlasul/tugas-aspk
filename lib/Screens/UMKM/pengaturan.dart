@@ -1,5 +1,8 @@
 import 'package:bits/Screens/HomeKonsumen/Screen/profile_screen.dart';
+import 'package:bits/Screens/Login/login_screen.dart';
 import 'package:bits/Screens/UMKM/Profile.dart';
+import 'package:bits/service/authService.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -55,7 +58,14 @@ class PengaturanText2 extends StatelessWidget {
   }
 }
 
-class PengaturanWidget2 extends StatelessWidget {
+class PengaturanWidget2 extends StatefulWidget {
+  @override
+  _PengaturanWidget2State createState() => _PengaturanWidget2State();
+}
+
+class _PengaturanWidget2State extends State<PengaturanWidget2> {
+  final AuthService _auth = AuthService();
+  final auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -226,7 +236,17 @@ class PengaturanWidget2 extends StatelessWidget {
                 SizedBox(
                   height: 45,
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () async {
+                      await _auth.signOut();
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return LoginScreen();
+                          },
+                        ),
+                      );
+                    },
                     child: Container(
                         decoration: BoxDecoration(color: Colors.white),
                         child: Row(
