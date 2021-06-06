@@ -27,7 +27,7 @@ class _CAHomeKonsumenState extends State<CAHomeKonsumen> {
                 color: Colors.white,
                 child: CircleAvatar(
                   backgroundImage: AssetImage(
-                    "assets/images/circle_avatar.png",
+                    "assets/images/dummy_avatar.jpg",
                   ),
                   radius: 50,
                 ),
@@ -46,7 +46,7 @@ class _CAHomeKonsumenState extends State<CAHomeKonsumen> {
                       Row(
                         children: <Widget>[
                           Icon(Icons.monetization_on),
-                          Text("koin"),
+                          Text("2050 koin"),
                         ],
                       ),
                     ]),

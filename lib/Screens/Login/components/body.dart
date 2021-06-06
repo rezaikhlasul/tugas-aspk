@@ -42,12 +42,26 @@ class _BodyState extends State<Body> {
             SizedBox(
               height: size.height * 0.03,
             ),
-            Text(
-              "Masuk",
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.w500,
-                color: kPrimaryColor,
+            GestureDetector(
+              onTap: () async {
+                await _auth
+                    .signInWithEmailAndPassword(_email, _password)
+                    .then((user) => Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return BNBUMKM();
+                            },
+                          ),
+                        ));
+              },
+              child: Text(
+                "Masuk",
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.w500,
+                  color: kPrimaryColor,
+                ),
               ),
             ),
             Flexible(
@@ -100,7 +114,7 @@ class _BodyState extends State<Body> {
                                         context,
                                         MaterialPageRoute(
                                           builder: (context) {
-                                            return BNBUMKM();
+                                            return BNBHomeKonsumen();
                                           },
                                         ),
                                       ));

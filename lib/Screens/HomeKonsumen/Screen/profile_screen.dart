@@ -73,7 +73,7 @@ class CAProfileKonsumen extends StatelessWidget {
         color: Colors.white,
         child: CircleAvatar(
           backgroundImage: AssetImage(
-            "assets/images/circle_avatar.png",
+            "assets/images/dummy_avatar.jpg",
           ),
           radius: 50,
         ));

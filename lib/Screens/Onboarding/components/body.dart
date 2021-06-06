@@ -10,6 +10,7 @@ class Body extends StatelessWidget {
     return [
       PageViewModel(
         title: "Scan pada kemasan produk",
+        body: " ",
         image: SvgPicture.asset(
           "assets/ilustrasi/scanning.svg",
           alignment: Alignment.center,
@@ -25,6 +26,7 @@ class Body extends StatelessWidget {
       ),
       PageViewModel(
         title: "Beri penilaian pada produk",
+        body: " ",
         image: SvgPicture.asset(
           "assets/ilustrasi/review.svg",
           alignment: Alignment.center,
@@ -41,6 +43,7 @@ class Body extends StatelessWidget {
       ),
       PageViewModel(
         title: "Membantu UMKM meningkatkan kualitasnya",
+        body: " ",
         image: SvgPicture.asset(
           "assets/ilustrasi/marketup.svg",
           alignment: Alignment.center,
