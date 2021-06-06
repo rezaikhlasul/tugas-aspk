@@ -1,6 +1,8 @@
 import 'package:bits/Screens/HomeKonsumen/components/searchbar.dart';
+import 'package:bits/Screens/HomeKonsumen/components/widgetlink.dart';
 import 'package:bits/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/link.dart';
 
 class SBManisan extends StatefulWidget {
   @override
@@ -37,84 +39,37 @@ class _ListKategoriManisanState extends State<ListKategoriManisan> {
 
   var produk = [
     {
-      "gambar": "assets/images/Konsumen1.jpg",
-      "nama": "Nama Produk",
-      "rating": "Rating Produk",
-      "kategori": "Kategori Produk",
-      "harga": "Harga Produk",
-      "lokasi": "Lokasi Produk",
+      "gambar": "assets/images/Konsumen2.jpg",
+      "nama": "Manisan Virgin",
+      "rating": "4.5",
+      "kategori": "Manisan",
+      "harga": "Rp 25.000",
+      "lokasi": "Dramagon",
       "deskripsi":
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius eleifend volutpat. Aliquam nec consequat enim. Nulla ultrices tincidunt mi quis fermentum. Etiam luctus, diam sit amet convallis dictum, ligula lorem facilisis odio, eget aliquam felis ante eu nulla. Donec sagittis sem dui, nec pulvinar magna aliquam sit amet. Maecenas. "
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius eleifend volutpat. Aliquam nec consequat enim. Nulla ultrices tincidunt mi quis fermentum. Etiam luctus, diam sit amet convallis dictum, ligula lorem facilisis odio, eget aliquam felis ante eu nulla. Donec sagittis sem dui, nec pulvinar magna aliquam sit amet. Maecenas. ",
+      "link": "https://goo.gl/maps/Y5rYQoiGYYQ4ENob6"
     },
     {
       "gambar": "assets/images/Konsumen2.jpg",
-      "nama": "Nama Produk",
-      "rating": "Rating Produk",
-      "kategori": "Kategori Produk",
-      "harga": "Harga Produk",
-      "lokasi": "Lokasi Produk",
+      "nama": "Manisan Emak",
+      "rating": "4.5",
+      "kategori": "Manisan",
+      "harga": "Rp 20.000",
+      "lokasi": "Dramagon",
       "deskripsi":
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius eleifend volutpat. Aliquam nec consequat enim. Nulla ultrices tincidunt mi quis fermentum. Etiam luctus, diam sit amet convallis dictum, ligula lorem facilisis odio, eget aliquam felis ante eu nulla. Donec sagittis sem dui, nec pulvinar magna aliquam sit amet. Maecenas. "
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius eleifend volutpat. Aliquam nec consequat enim. Nulla ultrices tincidunt mi quis fermentum. Etiam luctus, diam sit amet convallis dictum, ligula lorem facilisis odio, eget aliquam felis ante eu nulla. Donec sagittis sem dui, nec pulvinar magna aliquam sit amet. Maecenas. ",
+      "link": "https://goo.gl/maps/iHunhLR9Gmsn42FNA"
     },
     {
-      "gambar": "assets/images/circle_avatar.png",
-      "nama": "Nama Produk",
-      "rating": "Rating Produk",
-      "kategori": "Kategori Produk",
-      "harga": "Harga Produk",
-      "lokasi": "Lokasi Produk",
+      "gambar": "assets/images/Konsumen2.jpg",
+      "nama": "Manisan Buah Khas Bogor",
+      "rating": "4.5",
+      "kategori": "Manisan",
+      "harga": "Rp 20.000",
+      "lokasi": "Dramagon",
       "deskripsi":
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius eleifend volutpat. Aliquam nec consequat enim. Nulla ultrices tincidunt mi quis fermentum. Etiam luctus, diam sit amet convallis dictum, ligula lorem facilisis odio, eget aliquam felis ante eu nulla. Donec sagittis sem dui, nec pulvinar magna aliquam sit amet. Maecenas. "
-    },
-    {
-      "gambar": "assets/images/circle_avatar.png",
-      "nama": "Nama Produk",
-      "rating": "Rating Produk",
-      "kategori": "Kategori Produk",
-      "harga": "Harga Produk",
-      "lokasi": "Lokasi Produk",
-      "deskripsi":
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius eleifend volutpat. Aliquam nec consequat enim. Nulla ultrices tincidunt mi quis fermentum. Etiam luctus, diam sit amet convallis dictum, ligula lorem facilisis odio, eget aliquam felis ante eu nulla. Donec sagittis sem dui, nec pulvinar magna aliquam sit amet. Maecenas. "
-    },
-    {
-      "gambar": "assets/images/circle_avatar.png",
-      "nama": "Nama Produk",
-      "rating": "Rating Produk",
-      "kategori": "Kategori Produk",
-      "harga": "Harga Produk",
-      "lokasi": "Lokasi Produk",
-      "deskripsi":
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius eleifend volutpat. Aliquam nec consequat enim. Nulla ultrices tincidunt mi quis fermentum. Etiam luctus, diam sit amet convallis dictum, ligula lorem facilisis odio, eget aliquam felis ante eu nulla. Donec sagittis sem dui, nec pulvinar magna aliquam sit amet. Maecenas. "
-    },
-    {
-      "gambar": "assets/images/circle_avatar.png",
-      "nama": "Nama Produk",
-      "rating": "Rating Produk",
-      "kategori": "Kategori Produk",
-      "harga": "Harga Produk",
-      "lokasi": "Lokasi Produk",
-      "deskripsi":
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius eleifend volutpat. Aliquam nec consequat enim. Nulla ultrices tincidunt mi quis fermentum. Etiam luctus, diam sit amet convallis dictum, ligula lorem facilisis odio, eget aliquam felis ante eu nulla. Donec sagittis sem dui, nec pulvinar magna aliquam sit amet. Maecenas. "
-    },
-    {
-      "gambar": "assets/images/circle_avatar.png",
-      "nama": "Nama Produk",
-      "rating": "Rating Produk",
-      "kategori": "Kategori Produk",
-      "harga": "Harga Produk",
-      "lokasi": "Lokasi Produk",
-      "deskripsi":
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius eleifend volutpat. Aliquam nec consequat enim. Nulla ultrices tincidunt mi quis fermentum. Etiam luctus, diam sit amet convallis dictum, ligula lorem facilisis odio, eget aliquam felis ante eu nulla. Donec sagittis sem dui, nec pulvinar magna aliquam sit amet. Maecenas. "
-    },
-    {
-      "gambar": "assets/images/circle_avatar.png",
-      "nama": "Nama Produk",
-      "rating": "Rating Produk",
-      "kategori": "Kategori Produk",
-      "harga": "Harga Produk",
-      "lokasi": "Lokasi Produk",
-      "deskripsi":
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius eleifend volutpat. Aliquam nec consequat enim. Nulla ultrices tincidunt mi quis fermentum. Etiam luctus, diam sit amet convallis dictum, ligula lorem facilisis odio, eget aliquam felis ante eu nulla. Donec sagittis sem dui, nec pulvinar magna aliquam sit amet. Maecenas. "
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius eleifend volutpat. Aliquam nec consequat enim. Nulla ultrices tincidunt mi quis fermentum. Etiam luctus, diam sit amet convallis dictum, ligula lorem facilisis odio, eget aliquam felis ante eu nulla. Donec sagittis sem dui, nec pulvinar magna aliquam sit amet. Maecenas. ",
+      "link": "https://g.page/Manisan?share"
     },
   ];
 
@@ -145,7 +100,8 @@ class _ListKategoriManisanState extends State<ListKategoriManisan> {
                             rating: produknya['rating'],
                             deskripsi: produknya['deskripsi'],
                             harga: produknya['harga'],
-                            lokasi: produknya['lokasi'],
+                            lokasiM: produknya['lokasi'],
+                            link: produknya['link'],
                           );
                         }));
                       },
@@ -238,8 +194,9 @@ class DetailProdukManisan extends StatelessWidget {
       this.rating,
       this.deskripsi,
       this.harga,
-      this.lokasi});
-  final String gambar, nama, kategori, rating, deskripsi, harga, lokasi;
+      this.lokasiM,
+      this.link});
+  final String gambar, nama, kategori, rating, deskripsi, harga, lokasiM, link;
 
   @override
   Widget build(BuildContext context) {
@@ -338,12 +295,9 @@ class DetailProdukManisan extends StatelessWidget {
                           style: TextStyle(fontSize: 17, color: Colors.white),
                         )),
                         Container(
-                            child: TextButton(
-                                onPressed: () {},
-                                child: Text(
-                                  lokasi,
-                                  style: TextStyle(color: Colors.white),
-                                ))),
+                            child: LaunchButton(lokasiM, () async {
+                          await openUrl(link);
+                        })),
                       ]),
                 ],
               ),

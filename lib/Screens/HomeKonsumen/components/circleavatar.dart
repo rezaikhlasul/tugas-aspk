@@ -36,9 +36,10 @@ class _CAHomeKonsumenState extends State<CAHomeKonsumen> {
                         fontSize: 20),
                   ),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: <Widget>[
                       Icon(Icons.monetization_on),
-                      Text("koin"),
+                      Text(" 2050 koin"),
                     ],
                   ),
                 ]),
