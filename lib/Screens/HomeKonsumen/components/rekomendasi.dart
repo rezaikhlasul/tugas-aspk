@@ -126,7 +126,6 @@ class _ListRekomendasiState extends State<ListRekomendasi> {
                         return DetailProduk(
                           gambar: produknya["gambar"],
                           nama: produknya["nama"],
-                          rating: produknya["rating"],
                           kategori: produknya["kategori"],
                           harga: produknya["harga"],
                           lokasi: produknya["lokasi"],
