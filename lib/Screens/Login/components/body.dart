@@ -1,3 +1,4 @@
+import 'package:bits/Screens/HomeKonsumen/components/bottomnavigationbar.dart';
 import 'package:bits/Screens/Login/components/background.dart';
 import 'package:bits/Screens/SignUp/signup_screen.dart';
 import 'package:bits/Screens/UMKM/bnb.dart';
@@ -93,16 +94,16 @@ class _BodyState extends State<Body> {
                           RoundedAuthButton(
                             text: "Masuk",
                             press: () async {
-                              await _auth.signInWithEmailAndPassword(
-                                  _email, _password);
-                              Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) {
-                                    return BNBUMKM();
-                                  },
-                                ),
-                              );
+                              await _auth
+                                  .signInWithEmailAndPassword(_email, _password)
+                                  .then((user) => Navigator.pushReplacement(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) {
+                                            return BNBHomeKonsumen();
+                                          },
+                                        ),
+                                      ));
                             },
                           ),
                           Container(

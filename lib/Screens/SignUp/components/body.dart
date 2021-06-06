@@ -20,7 +20,7 @@ class Body extends StatefulWidget {
 class _BodyState extends State<Body> {
   final AuthService _auth = AuthService();
   final auth = FirebaseAuth.instance;
-  String _email, _password;
+  String _email, _password, _namaLengkap;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -46,6 +46,11 @@ class _BodyState extends State<Body> {
                           child: TextField(
                             decoration:
                                 InputDecoration(hintText: "Nama Lengkap"),
+                            onChanged: (value) {
+                              setState(() {
+                                _namaLengkap = value.trim();
+                              });
+                            },
                           ),
                         ),
                         TextFieldContainerAuth(
@@ -101,7 +106,7 @@ class _BodyState extends State<Body> {
                           text: "Daftar",
                           press: () async {
                             await _auth.registerWithEmailAndPassword(
-                                _email, _password);
+                                _email, _password, _namaLengkap);
 
                             Navigator.pushReplacement(
                               context,
