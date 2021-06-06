@@ -196,9 +196,11 @@ class DetailHasilProduk extends StatelessWidget {
                                 BarChartSample3(),
                                 Container(
                                   margin: EdgeInsets.only(top: 2),
-                                  child: Text(
-                                      "Rata-rata penilaian keseluruhan konsumen terhadap katergori parameter kemasan produk " +
-                                          nama),
+                                  child: Text("Rata-rata penilaian keseluruhan konsumen terhadap katergori parameter kemasan produk " +
+                                      nama +
+                                      " sudah baik. Berdasarkan penilaian konsumen nilai ergonimitas kemasan produk " +
+                                      nama +
+                                      " bernilai 4.0, komunikasi 5.0, estetika 4.5, dan keamanan kemasan 4.5"),
                                 ),
                               ],
                             ),
