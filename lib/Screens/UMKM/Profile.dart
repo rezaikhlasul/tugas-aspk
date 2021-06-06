@@ -1,5 +1,7 @@
+import 'package:bits/Screens/HomeKonsumen/Screen/hubungi_bits.dart';
 import 'package:bits/Screens/HomeKonsumen/Screen/pengaturan_akun.dart';
 import 'package:bits/Screens/HomeKonsumen/Screen/profile_screen.dart';
+import 'package:bits/Screens/HomeKonsumen/Screen/pusat_bantuan.dart';
 import 'package:bits/constants.dart';
 import 'package:flutter/material.dart';
 import "package:bits/Screens/UMKM/bnb.dart";
@@ -267,32 +269,52 @@ class ProfileWidgetUMKM2 extends StatelessWidget {
           SizedBox(
             height: 80,
             child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return PusatBantuan();
+                      },
+                    ),
+                  );
+                },
                 child: Column(
-              children: <Widget>[
-                SvgPicture.asset("assets/icons/Konsumen/pusat_bantuan.svg"),
-                Text("Pusat Bantuan")
-              ],
-            )),
+                  children: <Widget>[
+                    SvgPicture.asset("assets/icons/Konsumen/pusat_bantuan.svg"),
+                    Text("Pusat Bantuan")
+                  ],
+                )),
           ),
           SizedBox(
             height: 80,
             child: InkWell(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return Pengaturan_UMKM();
+                  }));
+                },
                 child: Column(
-              children: <Widget>[
-                SvgPicture.asset("assets/icons/Konsumen/pengaturan1.svg"),
-                Text("Pengaturan Akun")
-              ],
-            )),
+                  children: <Widget>[
+                    SvgPicture.asset("assets/icons/Konsumen/pengaturan1.svg"),
+                    Text("Pengaturan Akun")
+                  ],
+                )),
           ),
           SizedBox(
             height: 80,
             child: InkWell(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return Hubungi_Bits();
+                  }));
+                },
                 child: Column(
-              children: <Widget>[
-                SvgPicture.asset("assets/icons/Konsumen/Hubungi_bits.svg"),
-                Text("Hubungi Bits")
-              ],
-            )),
+                  children: <Widget>[
+                    SvgPicture.asset("assets/icons/Konsumen/Hubungi_bits.svg"),
+                    Text("Hubungi Bits")
+                  ],
+                )),
           )
         ],
       ),
