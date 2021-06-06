@@ -51,7 +51,7 @@ class _ListKategoriState extends State<ListKategori> {
             ),
             MenuKategori(
               nama: "Olahan Kerupuk",
-              image: "assets/images/olahan_kerupuk.png",
+              image: "assets/images/Olahan_Kerupuk.png",
             ),
             MenuKategori(
               nama: "Makanan Ringan",
@@ -67,7 +67,7 @@ class _ListKategoriState extends State<ListKategori> {
             ),
             MenuKategori(
               nama: "Olahan Kerupuk",
-              image: "assets/images/olahan_kerupuk.png",
+              image: "assets/images/Olahan_Kerupuk.png",
             ),
           ],
         ),
