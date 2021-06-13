@@ -92,8 +92,7 @@ class PertanyaanSurvey extends StatelessWidget {
                       children: [
                         AccordionSection(
                             isOpen: true,
-                            headerText:
-                                'Apa perbedaan role konsumen dan UMKM ?',
+                            headerText: 'ERGONOMI',
                             content: Column(
                               children: [
                                 PertanyaanJawaban(
@@ -112,8 +111,7 @@ class PertanyaanSurvey extends StatelessWidget {
                             )),
                         AccordionSection(
                             isOpen: true,
-                            headerText:
-                                'Bagaimana Mengunduh data hasil review ?',
+                            headerText: 'KOMUNIKASI',
                             content: Column(
                               children: [
                                 PertanyaanJawaban(
@@ -132,8 +130,7 @@ class PertanyaanSurvey extends StatelessWidget {
                             )),
                         AccordionSection(
                             isOpen: true,
-                            headerText:
-                                'Bagaimana cara melakukan review Produk ?',
+                            headerText: 'ESTETIKA',
                             content: Column(
                               children: [
                                 PertanyaanJawaban(
@@ -152,7 +149,7 @@ class PertanyaanSurvey extends StatelessWidget {
                             )),
                         AccordionSection(
                           isOpen: true,
-                          headerText: "headerText",
+                          headerText: "KEAMANAN PANGAN",
                           content: Column(
                             children: [
                               PertanyaanJawaban(

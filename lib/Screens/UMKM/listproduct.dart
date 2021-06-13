@@ -36,7 +36,7 @@ class ListProduct extends StatelessWidget {
                                   kategori: snapshot.data[index].kategori,
                                   harga: snapshot.data[index].harga,
                                   deskripsi: snapshot.data[index].deskripsi,
-                                  lokasi: snapshot.data[index].deskripsi,
+                                  lokasi: snapshot.data[index].lokasi,
                                 );
                                 ;
                               }));
