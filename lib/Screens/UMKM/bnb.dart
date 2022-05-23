@@ -32,13 +32,13 @@ class _BNBUMKMState extends State<BNBUMKM> {
         iconSize: 25,
         items: [
           BottomNavigationBarItem(
-            title: Text('Beranda'),
+            label: 'Beranda',
             icon: Icon(
               Icons.home_outlined,
             ),
           ),
           BottomNavigationBarItem(
-            title: Text('Saya'),
+            label: 'Saya',
             icon: Icon(Icons.person_outlined),
           ),
         ],
